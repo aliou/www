@@ -30,16 +30,20 @@ h2 a {
   text-decoration: none;
 }
 
-#nav ul {
-  padding: 0;
+h2 a:hover {
+  text-decoration: underline;
 }
 
-#nav li {
-  list-style: none;
-}
-
-#nav a {
-  display: block;
-  color: #00aeef;
-  text-decoration: none;
-}
+/* #nav ul { */
+/*   padding: 0; */
+/* } */
+/*  */
+/* #nav li { */
+/*   list-style: none; */
+/* } */
+/*  */
+/* #nav a { */
+/*   display: block; */
+/*   color: #00aeef; */
+/*   text-decoration: none; */
+/* } */
