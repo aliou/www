@@ -64,6 +64,7 @@ a:hover,
 
 @media only screen and (max-width: 500px) {
   #content {
+    padding: 20px 0;
     width: 300px
   }
 }
