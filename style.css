@@ -25,6 +25,9 @@ p {
 
 a {
   color: #00aeef;
+}
+
+a.icons {
   padding: 10px;
   font-size: 20px;
   text-decoration: none;
@@ -35,7 +38,7 @@ a {
   color: #DE3E40;
 }
 
-a,
+a.icons,
 span.not {
   opacity: 0.5;
   -o-transition:.5s;
@@ -45,7 +48,7 @@ span.not {
   transition:.5s;
 }
 
-a:hover,
+a.icons:hover,
 .not:hover {
   opacity: 1;
 }
