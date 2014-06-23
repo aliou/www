@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt": "^0.4.5",
+    "grunt-css": "^0.5.4"
+  }
+}
