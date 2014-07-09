@@ -53,6 +53,18 @@ a.icons:hover,
   opacity: 1;
 }
 
+.feed:hover {
+  color: #f26522;
+}
+
+.github:hover {
+  color: #4183c4;
+}
+
+.ears:hover {
+  color: #c3000d;
+}
+
 @media only screen and (min-width: 701px) and (max-width: 939px) {
   #content {
     width: 700px
