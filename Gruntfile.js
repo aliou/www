@@ -5,19 +5,24 @@ module.exports = function(grunt) {
     concat: {
       css: {
         src: 'css/*.css',
-        dest: 'style.css'
+        dest: 'tmp/style.css'
       }
     },
     cssmin: {
       css: {
-        src: 'style.css',
+        src: 'tmp/style.css',
         dest: 'style.min.css'
       }
-    }
+    },
+    clean: {
+      main: [ 'tmp' ]
+    },
+
   });
 
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-css');
 
-  grunt.registerTask('default', ['concat', 'cssmin']);
+  grunt.registerTask('default', ['concat', 'cssmin', 'clean']);
 }
