@@ -29,7 +29,7 @@ a {
 
 a.icons {
   padding: 10px;
-  font-size: 20px;
+  font-size: 50px;
   text-decoration: none;
 }
 
@@ -58,7 +58,7 @@ a.icons:hover,
 }
 
 .github:hover {
-  color: #4183c4;
+  color: #999;
 }
 
 .ears:hover {
