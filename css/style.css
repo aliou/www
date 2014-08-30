@@ -61,6 +61,10 @@ a.icons:hover,
   color: #999;
 }
 
+.bookmark:hover {
+  color: #325897;
+}
+
 .ears:hover {
   color: #c3000d;
 }

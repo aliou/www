@@ -2,9 +2,9 @@
   font-family: entypo;
   src: url(fonts/entypo.eot);
   src: url(fonts/entypo.eot?) format("embedded-opentype"),
-  url(fonts/entypo.woff) format("woff"),
-  url(fonts/entypo.ttf) format("truetype"),
-  url(fonts/entypo.svg) format("svg");
+       url(fonts/entypo.woff) format("woff"),
+       url(fonts/entypo.ttf) format("truetype"),
+       url(fonts/entypo.svg) format("svg");
   font-weight: 400;
   font-style: normal;
 }
@@ -13,15 +13,16 @@
   font-family: entypo-social;
   src: url(fonts/entypo-social.eot);
   src: url(fonts/entypo-social.eot?) format("embedded-opentype"),
-  url(fonts/entypo-social.woff) format("woff"),
-  url(fonts/entypo-social.ttf) format("truetype"),
-  url(fonts/entypo-social.svg) format("svg");
+       url(fonts/entypo-social.woff) format("woff"),
+       url(fonts/entypo-social.ttf) format("truetype"),
+       url(fonts/entypo-social.svg) format("svg");
   font-weight: 400;
   font-style: normal;
 }
 
 .icon-mail,
 .icon-rss,
+.icon-bookmark,
 .icon-book,
 .icon-movie,
 .icon-github,
@@ -39,6 +40,7 @@
 .icon-mail,
 .icon-rss,
 .icon-book,
+.icon-bookmark,
 .icon-movie {
   font-family: entypo;
 }
@@ -49,6 +51,10 @@
 
 .icon-rss:before {
   content: "\E73A";
+}
+
+.icon-bookmark:before {
+  content: "\1F516";
 }
 
 .icon-book:before {
