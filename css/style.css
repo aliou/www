@@ -53,6 +53,10 @@ a.icons:hover,
   opacity: 1;
 }
 
+.twitter:hover {
+  color: #55ACEE;
+}
+
 .feed:hover {
   color: #f26522;
 }
