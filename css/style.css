@@ -17,7 +17,7 @@ h1 {
 
 p {
   font-size: 20px;
-  margin: 0 auto 30px;
+  margin: 30px auto;
   line-height: 25px;
   width: 600px;
   max-width: 90%;
@@ -71,6 +71,14 @@ a.icons:hover,
 
 .ears:hover {
   color: #c3000d;
+}
+
+#jam a {
+  color: #325897;
+}
+
+.hidden {
+  display: none;
 }
 
 @media only screen and (min-width: 701px) and (max-width: 939px) {
