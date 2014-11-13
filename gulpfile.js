@@ -1,8 +1,13 @@
 var gulp = require('gulp');
 
 var concat    = require('gulp-concat');
-var uglify    = require('gulp-uglify');
+var connect   = require('gulp-connect');
 var minifycss = require('gulp-minify-css');
+var uglify    = require('gulp-uglify');
+
+function notify(event) {
+  console.log('File "' + event.path + '" was changed.');
+}
 
 gulp.task('js', function() {
   return gulp.src('js/*.js')
@@ -19,12 +24,16 @@ gulp.task('css', function() {
 
 gulp.task('build', ['js', 'css']);
 
-gulp.task('watch', function () {
-  var watcher = gulp.watch('*', ['build']);
-
-  watcher.on('change', function(event) {
-    console.log('File "' + event.path + '" changed.');
+gulp.task('server', function() {
+  connect.server({
+    root: ['.'],
+    port: process.env.PORT || 8000
   });
+});
+
+gulp.task('watch', ['server'], function () {
+  gulp.watch('css/*.css', ['css']).on('change', notify);
+  gulp.watch('css/*.js', ['js']).on('change', notify);
 });
 
 gulp.task('default', ['build']);

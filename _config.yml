@@ -1,1 +1,1 @@
-exclude: [CNAME, node_modules/, package.json]
+exclude: [CNAME, node_modules/, package.json, css, js, gulpfile.js]
