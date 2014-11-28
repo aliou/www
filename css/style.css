@@ -31,15 +31,6 @@ a.icons {
   padding: 10px;
   font-size: 50px;
   text-decoration: none;
-}
-
-.not {
-  text-decoration: line-through;
-  color: #DE3E40;
-}
-
-a.icons,
-span.not {
   opacity: 0.5;
   -o-transition:.5s;
   -ms-transition:.5s;
@@ -48,8 +39,7 @@ span.not {
   transition:.5s;
 }
 
-a.icons:hover,
-.not:hover {
+a.icons:hover {
   opacity: 1;
 }
 
@@ -65,8 +55,8 @@ a.icons:hover,
   color: #999;
 }
 
-.bookmark:hover {
-  color: #325897;
+.tumblr:hover {
+  color: #35465c;
 }
 
 .ears:hover {

@@ -27,6 +27,7 @@
 .icon-movie,
 .icon-github,
 .icon-lastfm,
+.icon-tumblr,
 .icon-twitter {
   speak: none;
   font-style: normal;
@@ -67,6 +68,7 @@
 
 .icon-github,
 .icon-lastfm,
+.icon-tumblr,
 .icon-twitter {
   font-family: entypo-social;
 }
@@ -81,4 +83,8 @@
 
 .icon-twitter:before {
   content: "\F309";
+}
+
+.icon-tumblr:before {
+  content: "\F315";
 }
