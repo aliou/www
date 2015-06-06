@@ -1,48 +1,23 @@
-body {
-  background-color: #2a2c2e;
-  color: #FFFFFF;
-  font-family: 'Muli', "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
-}
-
-#content {
-  width: 960px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 80px 0;
+.container {
+  max-width: 32rem;
+  margin: 0;
 }
 
 p {
-  font-size: 17px;
-  margin: 30px auto;
-  line-height: 25px;
-  width: 600px;
-  max-width: 90%;
+  font-size: 1.2rem;
 }
 
 a {
-  color: #999;
+  color: #005eb0;
 }
 
-a:hover {
-  color: white;
-  text-decoration: none;
-}
-
-@media only screen and (min-width: 701px) and (max-width: 939px) {
-  #content {
-    width: 700px
+@media (max-width: 52em) {
+  .sm-px2 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
-}
 
-@media only screen and (max-width: 700px) {
-  #content {
-    width: 500px
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  #content {
-    padding: 20px 0;
-    width: 300px
+  .sm-ml2 {
+    margin-left: 1rem;
   }
 }

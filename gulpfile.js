@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 
 var concat    = require('gulp-concat');
-var connect   = require('gulp-connect');
 var minifycss = require('gulp-minify-css');
 var uglify    = require('gulp-uglify');
 
@@ -24,14 +23,7 @@ gulp.task('css', function() {
 
 gulp.task('build', ['js', 'css']);
 
-gulp.task('server', function() {
-  connect.server({
-    root: ['.'],
-    port: process.env.PORT || 8000
-  });
-});
-
-gulp.task('watch', ['server'], function () {
+gulp.task('watch', function () {
   gulp.watch('css/*.css', ['css']).on('change', notify);
   gulp.watch('css/*.js', ['js']).on('change', notify);
 });
