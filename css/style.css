@@ -1,10 +1,14 @@
+body {
+  font-family: 'Lato', serif;
+}
+
 .container {
   max-width: 32rem;
   margin: 0;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 a {
