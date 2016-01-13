@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Aliou Diallo</title>
-    <meta name="google-site-verification" content="QnLybeTUEt_VtHQVLLtEz0WflVe-H7TNqCOTlF-tfz8" />
-    <meta name='author' content='Aliou Diallo' />
-    <meta name='description' content='Aliou Diallo is a developer in training from Paris.' />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>{{ site.name }}</title>
     <meta charset="UTF-8">
+    <meta name="google-site-verification" content="QnLybeTUEt_VtHQVLLtEz0WflVe-H7TNqCOTlF-tfz8" />
+    <meta name='author' content='{{ site.name }}' />
+    <meta name='description' content='{{ site.description }}' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
     {% stylesheet style %}
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
     <meta name='twitter:card' content='summary' />
-    <meta name='twitter:site' content='@aliouftw' />
-    <meta name='twitter:title' content='Aliou Diallo' />
-    <meta name='twitter:description' content='Aliou Diallo is a developer in training from Paris.' />
+    <meta name='twitter:site' content='{{ site.twitter }}' />
+    <meta name='twitter:title' content='{{ site.name }}' />
+    <meta name='twitter:description' content='{{ site.description }}' />
   </head>
   <body class='bg-silver navy'>
     <div class='container px4 py4 sm-px2 animated fadeIn'>

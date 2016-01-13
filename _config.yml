@@ -1,5 +1,6 @@
-name: 'Aliou Diallo'
-url: 'https://aliou.me'
+name: Aliou Diallo
+description: Aliou Diallo is a backend developer from Paris.
+twitter: '@aliouftw'
 
 gems:
   - jekyll-assets
