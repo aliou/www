@@ -1,1 +1,11 @@
-exclude: [CNAME, node_modules/, package.json, css, js, gulpfile.js]
+name: 'Aliou Diallo'
+url: 'https://aliou.me'
+
+gems:
+  - jekyll-assets
+
+exclude: [Gemfile, Gemfile.lock]
+
+assets:
+  compess:
+    css: sass
