@@ -11,10 +11,7 @@
     {% stylesheet style %}
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
-    <meta name='twitter:card' content='summary' />
-    <meta name='twitter:site' content='{{ site.twitter }}' />
-    <meta name='twitter:title' content='{{ site.name }}' />
-    <meta name='twitter:description' content='{{ site.description }}' />
+    {% include twitter.html %}
   </head>
   <body class='bg-silver navy'>
     <div class='container px4 py4 sm-px2 animated fadeIn'>
