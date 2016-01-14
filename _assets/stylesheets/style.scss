@@ -1,5 +1,4 @@
-//= require vendor/_normalize
-//= require vendor/animate
+//= require normalize
 
 // pretty stuff
 body {
@@ -43,8 +42,38 @@ a:hover {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+}
 
-  .sm-ml2 {
-    margin-left: 1rem;
+// animation stuff
+
+.animated {
+  -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
