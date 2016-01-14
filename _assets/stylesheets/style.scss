@@ -1,25 +1,45 @@
 //= require vendor/_normalize
 //= require vendor/animate
 
+// pretty stuff
 body {
   font-family: -apple-system, 'Lato', serif;
+  line-height: 1.5;
+  font-size: 1.3rem;
 }
 
+.bg-silver {
+  background-color: #F6F6F6;
+}
+
+.navy {
+  color: #212121;
+}
+
+a {
+  color: #005eb0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+// layout stuff
 .container {
   max-width: 32rem;
   margin: 0;
 }
 
-p {
-  font-size: 1.3rem;
-}
-
-a {
-  color: #005eb0;
+.px {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 @media (max-width: 52em) {
-  .sm-px2 {
+  .px {
     padding-left: 1rem;
     padding-right: 1rem;
   }
