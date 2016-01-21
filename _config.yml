@@ -5,7 +5,7 @@ twitter: '@aliouftw'
 gems:
   - jekyll-assets
 
-exclude: [Gemfile, Gemfile.lock]
+exclude: [Gemfile, Gemfile.lock, vendor]
 
 assets:
   compess:
