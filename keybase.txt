@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/aliou
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://aliou.me
+  * I am aliou (https://keybase.io/aliou) on keybase.
+  * I have a public key with fingerprint EF26 D9C3 24D0 3D5C 4801  41C1 FDB9 009E BEBF E584
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101cabd24ecc10ecaf8750fb93cd93610c526a0f74cf48b326432edd2ef8693395d0a",
+            "fingerprint": "ef26d9c324d03d5c480141c1fdb9009ebebfe584",
+            "host": "keybase.io",
+            "key_id": "fdb9009ebebfe584",
+            "kid": "0101cabd24ecc10ecaf8750fb93cd93610c526a0f74cf48b326432edd2ef8693395d0a",
+            "uid": "3a9619af544636b11c07d438f9f1de00",
+            "username": "aliou"
+        },
+        "service": {
+            "hostname": "aliou.me",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1459965229,
+    "expire_in": 157680000,
+    "prev": "2a8f5d5a4a50c3f298f4b9d60283c4e1799db124bb9bf3ba06dd181d773f2bbb",
+    "seqno": 8,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.53
+Comment: https://keybase.io/crypto
+
+yMIgAnicrVJbSBVBGD5mVp6K0iKi7MJ2M87RZnZn9+ycIoRepCgUCpOi087NNnX3
+dM4eL6lBD1GRlRBFUBCRRQ8nii4QldFFtBBC8iUtiLAi9EUTysKsWSnoocfmZWa+
++b5vvv/nb5+ZGQhmlBRcyO6b3F+X0fW4JRUoy9pc0KAQl9Ur0Qalkk9svIrxpBer
+tJkSVQAEkFqEqYhTCgGnljAjOhAEa5RhzYCA6qphARFBVCCTaKqBNJUzpnJhGljT
+sM6ApYQVYTsVPBFP2I4nbblQDYappiIGNKZTZAKIIIWCEQwA5oQTwXUTSeEeN+kr
+ZDhiJXmh7UpMXmIT8f7B/8+5UxN2moUNiC2hI2RoBoGQgghDmimwgIwD4BOTPOFY
+1VyyrSrbTSlNYUVCNTblflf9Mv5+LpTHsBJPuJ5L3SqJ7vG8eDLqq7z6uE+r5ST2
+2yBGbIfJBkpFDU8kbddRolAyqWf7jhDpGBu6quKwwuvidoLHbJ+hRwwTyOX/w2uk
+pWqZQme6hSwdUE2o2BSIYGYA1dQo4jCCMSNQRYRgIjRiAYMxaEIWiUgyIUTxS9rn
+uErUlDGtCmmZtCscy0sluNL05NHOyYGMYGBK1iR/sALB7Nl/xm0sNHV89fAyd/j1
+0PiNe32l8/PWdZy5+7O8ePTHkaLBMvPrtaP56aLQSHO6d+pnp2Os4lhLqPz+9kQy
+58xDMfBtW3reQnf9u3a64dIhMTSaZ6zbEW0Pdy3/RJbuR0UHR9LvOyeJRaW5zXXO
+07aRtfmttw59PD3nZseuBV9WNc4ovty/901Jzkc7SG4vHsg98LJny9mHu1PFLa03
++m+uyVzRmHV9+ou2O69mDBasz7n8Y/G9ptrsrLzzdzYNdRYH+YGeZ8cu5ZxSp826
+0lhbv9VJw/yTcx97oY29xze740FS/XZtQ+s5PXSrOcw/nDg8Zmbj0iUPVrqbmruX
+dKv2xe/PnaqrtYsWqL8A5zU7iA==
+=4YzO
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/aliou
+
+==================================================================
