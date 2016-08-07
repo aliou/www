@@ -8,5 +8,6 @@ gems:
 exclude: [Gemfile, Gemfile.lock, vendor]
 
 assets:
-  compess:
+  digest: true
+  compass:
     css: sass
