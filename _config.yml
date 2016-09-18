@@ -2,6 +2,10 @@ name: Aliou Diallo
 description: Aliou Diallo is a backend developer from Paris.
 twitter: '@aliouftw'
 
+google:
+  verification: 'QnLybeTUEt_VtHQVLLtEz0WflVe-H7TNqCOTlF-tfz8'
+  analytics: 'UA-47951031-4'
+
 gems:
   - jekyll-assets
 
