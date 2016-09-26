@@ -1,6 +1,10 @@
 name: Aliou Diallo
-description: Aliou Diallo is a backend developer from Paris.
+description: Aliou Diallo is a developer living in Paris.
 twitter: '@aliouftw'
+
+google:
+  verification: 'QnLybeTUEt_VtHQVLLtEz0WflVe-H7TNqCOTlF-tfz8'
+  analytics: 'UA-47951031-4'
 
 gems:
   - jekyll-assets
@@ -8,6 +12,8 @@ gems:
 exclude: [Gemfile, Gemfile.lock, vendor]
 
 assets:
+  compress:
+    css: true
   digest: true
   compass:
     css: sass
