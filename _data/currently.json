@@ -1,0 +1,26 @@
+{
+  "music": [
+    {
+      "artist": "Francis and the Lights",
+      "name": "Farewell, Starlite!",
+      "url": "http://farewellstarlite.com"
+    },
+    {
+      "artist": "Chance the Rapper",
+      "name": "Coloring Book",
+      "url": "http://chanceraps.com"
+    }
+  ],
+  "books": [
+    {
+      "name": "Ancillary Mercy",
+      "author": "Ann Leckie",
+      "url": "https://www.goodreads.com/book/show/23533039-ancillary-mercy"
+    },
+    {
+      "author": "Brian K. Vaughan & Fiona Staples",
+      "name": "Saga",
+      "url": "httpsi//www.goodreads.com/series/146415-saga-collected-editions"
+    }
+  ]
+}

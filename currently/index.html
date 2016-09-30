@@ -7,30 +7,24 @@ title: Aliou Diallo &middot; Currently
 
 <p class='f4'>Listening</p>
 <ul>
-  <li class='mt2'>
-    <em>
-      <a href='http://farewellstarlite.com' target='_blank' class='black underline'>Farewell, Starlite!</a>
-    </em> by <strong>Francis and the Lights</strong>
-  </li>
-  <li class='mt2'>
-    <em>
-      <a href='http://chanceraps.com' target='_blank' class='black underline'>Coloring Book</a>
-    </em> by <strong>Change the Rapper</strong>
-  </li>
+  {% for album in site.data.currently.music %}
+    <li class='mt2'>
+      <em>
+        <a href='{{ album.url }}' target='_blank' class='black underline'>{{ album.name }}</a>
+      </em> by <strong>{{ album.artist }}</strong>
+    </li>
+  {% endfor %}
 </ul>
 
 <p class='f4'>Reading</p>
 <ul>
-  <li class='mt2'>
-    <em>
-      <a href='https://www.goodreads.com/book/show/23533039-ancillary-mercy' target='_blank' class='black underline'>Ancillary Mercy</a>
-    </em> by <strong>Ann Leckie</strong>
-  </li>
-  <li class='mt2'>
-    <em>
-      <a href='https://www.goodreads.com/series/146415-saga-collected-editions' target='_blank' class='black underline'>Saga</a>
-    </em> by <strong>Brian K. Vaughan</strong> &amp; <strong>Fiona Staples</strong>
-  </li>
+  {% for book in site.data.currently.books %}
+    <li class='mt2'>
+      <em>
+        <a href='{{ book.url }}' target='_blank' class='black underline'>{{ book.name }}</a>
+      </em> by <strong>{{ book.author }}</strong>
+    </li>
+  {% endfor %}
 </ul>
 
 <p class='f4'>Learning</p>
