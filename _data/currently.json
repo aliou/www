@@ -1,26 +1,21 @@
 {
   "music": [
     {
-      "artist": "Francis and the Lights",
-      "name": "Farewell, Starlite!",
-      "url": "http://farewellstarlite.com"
+      "artist": "Solange",
+      "name": "A Seat at the Table",
+      "url": "http://www.solangemusic.com/"
     },
     {
-      "artist": "Chance the Rapper",
-      "name": "Coloring Book",
-      "url": "http://chanceraps.com"
+      "artist": "Jordan Rakei",
+      "name": "Cloak",
+      "url": "https://soundcloud.com/jordan-rakei"
     }
   ],
   "books": [
     {
-      "name": "Ancillary Mercy",
-      "author": "Ann Leckie",
-      "url": "https://www.goodreads.com/book/show/23533039-ancillary-mercy"
-    },
-    {
-      "author": "Chuuya Koyama",
-      "name": "Space Brothers",
-      "url": "https://www.goodreads.com/series/147383-space-brothers"
+      "name": "Authority",
+      "author": "Jeff VanderMeer",
+      "url": "https://www.goodreads.com/book/show/18077769-authority"
     }
   ]
 }
