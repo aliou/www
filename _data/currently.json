@@ -1,14 +1,14 @@
 {
   "music": [
     {
+      "artist": "Andrew Huang",
+      "name": "Cosmic",
+      "url": "https://andrewhuang.bandcamp.com/album/cosmic"
+    },
+    {
       "artist": "Solange",
       "name": "A Seat at the Table",
       "url": "http://www.solangemusic.com/"
-    },
-    {
-      "artist": "Jordan Rakei",
-      "name": "Cloak",
-      "url": "https://soundcloud.com/jordan-rakei"
     }
   ],
   "books": [
