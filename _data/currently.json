@@ -1,14 +1,14 @@
 {
   "music": [
     {
+      "artist": "Alfa Mist",
+      "name": "Nocture EP",
+      "url": "http://alfamist.bandcamp.com/album/nocturne-ep"
+    },
+    {
       "artist": "Andrew Huang",
       "name": "Cosmic",
       "url": "https://andrewhuang.bandcamp.com/album/cosmic"
-    },
-    {
-      "artist": "Tom Misch",
-      "name": "Beat Tape 2",
-      "url": "http://tommisch1.bandcamp.com/album/beat-tape-2-extended-edition"
     }
   ],
   "books": [
@@ -16,6 +16,11 @@
       "name": "The Shape of Design",
       "author": "Frank Chimero",
       "url": "https://www.goodreads.com/book/show/13017981-the-shape-of-design"
+    },
+    {
+      "name": "Buffering: Unshared Tales of a Life Fully Loaded",
+      "author": "Hannah Hart",
+      "url": "https://www.goodreads.com/book/show/28217831-buffering"
     }
   ]
 }
