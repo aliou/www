@@ -1,14 +1,14 @@
 {
   "music": [
     {
-      "artist": "Alfa Mist",
-      "name": "Nocture EP",
-      "url": "http://alfamist.bandcamp.com/album/nocturne-ep"
+      "artist": "KAYTRANADA",
+      "name": "99.9%",
+      "url": "http://kaytranada.com/#preorder"
     },
     {
-      "artist": "Andrew Huang",
-      "name": "Cosmic",
-      "url": "https://andrewhuang.bandcamp.com/album/cosmic"
+      "artist": "A Tribe Called Quest",
+      "name": "We Got It from Here... Thank You 4 Your Service",
+      "url": "http://atribecalledquest.com/portfolio/wgifh/"
     }
   ],
   "books": [
@@ -16,11 +16,6 @@
       "name": "The Shape of Design",
       "author": "Frank Chimero",
       "url": "https://www.goodreads.com/book/show/13017981-the-shape-of-design"
-    },
-    {
-      "name": "Buffering: Unshared Tales of a Life Fully Loaded",
-      "author": "Hannah Hart",
-      "url": "https://www.goodreads.com/book/show/28217831-buffering"
     }
   ]
 }
