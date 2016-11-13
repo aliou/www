@@ -9,7 +9,7 @@ google:
 gems:
   - jekyll-assets
 
-exclude: [Gemfile, Gemfile.lock, script]
+exclude: [Gemfile, Gemfile.lock]
 
 assets:
   compress:
