@@ -1,21 +1,27 @@
 {
-  "music": [
-    {
-      "artist": "KAYTRANADA",
-      "name": "99.9%",
-      "url": "http://kaytranada.com/#preorder"
-    },
-    {
-      "artist": "A Tribe Called Quest",
-      "name": "We Got It from Here... Thank You 4 Your Service",
-      "url": "http://atribecalledquest.com/portfolio/wgifh/"
-    }
-  ],
+  "date": "2016-11-27",
   "books": [
     {
       "name": "The Shape of Design",
       "author": "Frank Chimero",
       "url": "https://www.goodreads.com/book/show/13017981-the-shape-of-design"
+    },
+    {
+      "name": "GunnM: Last Order",
+      "author": "Yukito Kishiro",
+      "url": "https://www.goodreads.com/series/59228-battle-angel-alita-last-order"
+    }
+  ],
+  "music": [
+    {
+      "artist": "Andrew Huang",
+      "name": "Pintxos",
+      "url": "https://andrewhuang.bandcamp.com/album/pintxos"
+    },
+    {
+      "artist": "Miles Davis",
+      "name": "Kind of Blue",
+      "url": "http://www.milesdavis.com/albums/"
     }
   ]
 }
