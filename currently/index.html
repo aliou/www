@@ -3,35 +3,32 @@ layout: page
 title: Aliou Diallo &middot; Currently
 ---
 
+{% assign data = site.data.currently %}
+
 <p class='f3 mt0'>Currently</p>
 
-<p class='f4'>Listening</p>
-<ul>
-  {% for album in site.data.currently.music %}
-    <li class='mt2'>
-      <em>
-        <a href='{{ album.url }}' target='_blank' class='black underline'>{{ album.name }}</a>
-      </em> by <strong>{{ album.artist }}</strong>
-    </li>
-  {% endfor %}
-</ul>
+{% if data.music != empty %}
+  <p class='f4'>Listening</p>
+  <ul>
+    {% for album in site.data.currently.music %}
+      <li class='mt2'>
+        <em>
+          <a href='{{ album.url }}' target='_blank' class='black underline'>{{ album.name }}</a>
+        </em> by <strong>{{ album.artist }}</strong>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
 
-<p class='f4'>Reading</p>
-<ul>
-  {% for book in site.data.currently.books %}
-    <li class='mt2'>
-      <em>
-        <a href='{{ book.url }}' target='_blank' class='black underline'>{{ book.name }}</a>
-      </em> by <strong>{{ book.author }}</strong>
-    </li>
-  {% endfor %}
-</ul>
-
-<!-- <p class='f4'>Learning</p> -->
-<!-- <ul> -->
-<!--   <li class='mt2'> -->
-<!--     <a href='http://elixir&#45;lang.org' target='_blank' class='black underline'>Elixir</a> &#38;amp; -->
-<!--     <a href='https://developer.apple.com/swift/' target='_blank' class='black underline'>Swift</a> -->
-<!--     by making a Bookmarking app consuming a simple API. -->
-<!--   </li> -->
-<!-- </ul> -->
+{% if data.music != empty %}
+  <p class='f4'>Reading</p>
+  <ul>
+    {% for book in site.data.currently.books %}
+      <li class='mt2'>
+        <em>
+          <a href='{{ book.url }}' target='_blank' class='black underline'>{{ book.name }}</a>
+        </em> by <strong>{{ book.author }}</strong>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
