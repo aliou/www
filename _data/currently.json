@@ -1,5 +1,5 @@
 {
-  "date": "2016-11-27",
+  "date": "2016-12-04",
   "books": [
     {
       "name": "Practical Object-Oriented Design in Ruby",
@@ -23,5 +23,8 @@
       "name": "Enter the Wu-Tang (36 Chambers)",
       "url": "https://www.youtube.com/watch?v=jOLuW2w5kgg"
     }
+  ],
+  "learning": [
+    "React + Redux!"
   ]
 }

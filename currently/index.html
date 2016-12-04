@@ -27,11 +27,9 @@ title: Aliou Diallo &middot; Currently
   {% endfor %}
 </ul>
 
-<!-- <p class='f4'>Learning</p> -->
-<!-- <ul> -->
-<!--   <li class='mt2'> -->
-<!--     <a href='http://elixir&#45;lang.org' target='_blank' class='black underline'>Elixir</a> &#38;amp; -->
-<!--     <a href='https://developer.apple.com/swift/' target='_blank' class='black underline'>Swift</a> -->
-<!--     by making a Bookmarking app consuming a simple API. -->
-<!--   </li> -->
-<!-- </ul> -->
+<p class='f4'>Learning</p>
+<ul>
+  {% for topic in site.data.currently.learning %}
+    <li class='mt2'>{{ topic }}</li>
+  {% endfor %}
+</ul>
