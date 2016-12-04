@@ -2,26 +2,26 @@
   "date": "2016-11-27",
   "books": [
     {
-      "name": "The Shape of Design",
-      "author": "Frank Chimero",
-      "url": "https://www.goodreads.com/book/show/13017981-the-shape-of-design"
+      "name": "Practical Object-Oriented Design in Ruby",
+      "author": "Sandi Metz",
+      "url": "http://www.poodr.com"
     },
     {
-      "name": "GunnM: Last Order",
-      "author": "Yukito Kishiro",
-      "url": "https://www.goodreads.com/series/59228-battle-angel-alita-last-order"
+      "name": "The Last Policeman",
+      "author": "Ben H. Winters",
+      "url": "https://www.goodreads.com/book/show/13330370-the-last-policeman"
     }
   ],
   "music": [
     {
-      "artist": "Andrew Huang",
-      "name": "Pintxos",
-      "url": "https://andrewhuang.bandcamp.com/album/pintxos"
+      "artist": "Childish Gambino",
+      "name": "\"Awaken, My Love!\"",
+      "url": "https://www.youtube.com/playlist?list=PLYuz75ZV-NPDBQkU3Gn4QVGc44iNjbyXj"
     },
     {
-      "artist": "Miles Davis",
-      "name": "Kind of Blue",
-      "url": "http://www.milesdavis.com/albums/"
+      "artist": "Wu-Tang Clan",
+      "name": "Enter the Wu-Tang (36 Chambers)",
+      "url": "https://www.youtube.com/watch?v=jOLuW2w5kgg"
     }
   ]
 }
