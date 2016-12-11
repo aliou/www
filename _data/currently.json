@@ -1,11 +1,6 @@
 {
-  "date": "2016-12-04",
+  "date": "2016-12-11",
   "books": [
-    {
-      "name": "Practical Object-Oriented Design in Ruby",
-      "author": "Sandi Metz",
-      "url": "http://www.poodr.com"
-    },
     {
       "name": "The Last Policeman",
       "author": "Ben H. Winters",
@@ -17,14 +12,8 @@
       "artist": "Childish Gambino",
       "name": "\"Awaken, My Love!\"",
       "url": "https://www.youtube.com/playlist?list=PLYuz75ZV-NPDBQkU3Gn4QVGc44iNjbyXj"
-    },
-    {
-      "artist": "Wu-Tang Clan",
-      "name": "Enter the Wu-Tang (36 Chambers)",
-      "url": "https://www.youtube.com/watch?v=jOLuW2w5kgg"
     }
   ],
   "learning": [
-    "React + Redux!"
   ]
 }
