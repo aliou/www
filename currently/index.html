@@ -3,6 +3,7 @@ layout: page
 title: Aliou Diallo &middot; Currently
 ---
 
+{% comment %} Extract all of this into Jekyll tags or Liquid filters {% endcomment %}
 {% assign data = site.data.currently %}
 
 <p class='f3 mt0'>Currently</p>
@@ -13,7 +14,11 @@ title: Aliou Diallo &middot; Currently
     {% for album in site.data.currently.music %}
       <li class='mt2'>
         <em>
-          <a href='{{ album.url }}' target='_blank' class='black underline'>{{ album.name }}</a>
+          {% if album.url != empty %}
+            <a href='{{ album.url }}' target='_blank' class='black underline'>{{ album.name }}</a>
+          {% else %}
+            {{ album.name }}
+          {% endif %}
         </em> by <strong>{{ album.artist }}</strong>
       </li>
     {% endfor %}

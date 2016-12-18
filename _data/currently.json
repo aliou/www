@@ -1,5 +1,5 @@
 {
-  "date": "2016-12-11",
+  "date": "2016-12-18",
   "books": [
     {
       "name": "The Last Policeman",
@@ -8,6 +8,11 @@
     }
   ],
   "music": [
+    {
+      "artist": "KiD CuDi",
+      "name": "Passion, Pain & Demon Slayin'",
+      "url": ""
+    },
     {
       "artist": "Childish Gambino",
       "name": "\"Awaken, My Love!\"",
