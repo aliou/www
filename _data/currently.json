@@ -1,5 +1,5 @@
 {
-  "date": "2016-12-18",
+  "date": "2016-12-22",
   "books": [
     {
       "name": "The Last Policeman",
@@ -9,14 +9,14 @@
   ],
   "music": [
     {
-      "artist": "KiD CuDi",
-      "name": "Passion, Pain & Demon Slayin'",
-      "url": ""
+      "artist": "Jeremih & Chance The Rapper",
+      "name": "Merry Christmas Lil' Mama",
+      "url": "https://soundcloud.com/chancetherapper/sets/merry-christmas-lil-mama-jeremih-chance"
     },
     {
-      "artist": "Childish Gambino",
-      "name": "\"Awaken, My Love!\"",
-      "url": "https://www.youtube.com/playlist?list=PLYuz75ZV-NPDBQkU3Gn4QVGc44iNjbyXj"
+      "artist": "Sufjan Stevens",
+      "name": "The Age of Adz",
+      "url": "http://music.sufjan.com/album/the-age-of-adz"
     }
   ],
   "learning": [
