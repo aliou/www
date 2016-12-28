@@ -1,22 +1,17 @@
 {
-  "date": "2016-12-22",
+  "date": "2016-12-28",
   "books": [
     {
-      "name": "The Last Policeman",
-      "author": "Ben H. Winters",
-      "url": "https://www.goodreads.com/book/show/13330370-the-last-policeman"
+      "name": "Dark Matter",
+      "author": "Blake Crouch",
+      "url": "https://www.goodreads.com/book/show/27833670-dark-matter"
     }
   ],
   "music": [
     {
-      "artist": "Jeremih & Chance The Rapper",
-      "name": "Merry Christmas Lil' Mama",
-      "url": "https://soundcloud.com/chancetherapper/sets/merry-christmas-lil-mama-jeremih-chance"
-    },
-    {
-      "artist": "Sufjan Stevens",
-      "name": "The Age of Adz",
-      "url": "http://music.sufjan.com/album/the-age-of-adz"
+      "artist": "Andrew Huang",
+      "name": "Astrolabe",
+      "url": "https://andrewhuang.bandcamp.com/album/astrolabe"
     }
   ],
   "learning": [
