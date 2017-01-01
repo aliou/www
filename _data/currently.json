@@ -1,17 +1,17 @@
 {
-  "date": "2016-12-28",
+  "date": "2017-01-01",
   "books": [
     {
-      "name": "Dark Matter",
-      "author": "Blake Crouch",
-      "url": "https://www.goodreads.com/book/show/27833670-dark-matter"
+      "name": "The Last Policeman",
+      "author": "Ben H. Winters",
+      "url": "https://www.goodreads.com/book/show/13330370-the-last-policeman"
     }
   ],
   "music": [
     {
       "artist": "Andrew Huang",
-      "name": "Astrolabe",
-      "url": "https://andrewhuang.bandcamp.com/album/astrolabe"
+      "name": "Galaxy",
+      "url": "https://andrewhuang.bandcamp.com/album/galaxy"
     }
   ],
   "learning": [
