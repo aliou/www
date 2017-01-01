@@ -6,7 +6,8 @@ title: Aliou Diallo &middot; Currently
 {% comment %} Extract all of this into Jekyll tags or Liquid filters {% endcomment %}
 {% assign data = site.data.currently %}
 
-<p class='f3 mt0'>Currently</p>
+<p class='f3 ma0'>Currently</p>
+<span class='f6 mid-gray'>Last updated: {{ site.data.currently.date }}</span>
 
 {% if data.music != empty %}
   <p class='f4'>Listening</p>
