@@ -1,5 +1,5 @@
 {
-  "date": "2017-01-01",
+  "date": "2017-01-09",
   "books": [
     {
       "name": "The Last Policeman",
@@ -9,9 +9,14 @@
   ],
   "music": [
     {
-      "artist": "Andrew Huang",
-      "name": "Galaxy",
-      "url": "https://andrewhuang.bandcamp.com/album/galaxy"
+      "artist": "Anderson .Paak",
+      "name": "Malibu",
+      "url": "http://www.andersonpaak.com/"
+    },
+    {
+      "artist": "The Internet",
+      "name": "Ego Death",
+      "url": "http://www.internet-band.com/"
     }
   ],
   "learning": [
