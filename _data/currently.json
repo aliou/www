@@ -1,22 +1,22 @@
 {
-  "date": "2017-01-09",
+  "date": "2017-01-13",
   "books": [
     {
-      "name": "The Last Policeman",
-      "author": "Ben H. Winters",
-      "url": "https://www.goodreads.com/book/show/13330370-the-last-policeman"
+      "name": "Ancillary Mercy",
+      "author": "Ann Leckie",
+      "url": "https://www.goodreads.com/book/show/23533039-ancillary-mercy"
     }
   ],
   "music": [
     {
-      "artist": "Anderson .Paak",
-      "name": "Malibu",
-      "url": "http://www.andersonpaak.com/"
+      "artist": "KAYTRANADA",
+      "name": "0.001% ???",
+      "url": "https://soundcloud.com/kaytranada/0001a"
     },
     {
-      "artist": "The Internet",
-      "name": "Ego Death",
-      "url": "http://www.internet-band.com/"
+      "artist": "KAYTRANADA",
+      "name": "99.9%",
+      "url": "http://kaytranada.com"
     }
   ],
   "learning": [
