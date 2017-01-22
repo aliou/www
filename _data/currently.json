@@ -1,22 +1,22 @@
 {
-  "date": "2017-01-13",
+  "date": "2017-01-22",
   "books": [
     {
       "name": "Ancillary Mercy",
       "author": "Ann Leckie",
       "url": "https://www.goodreads.com/book/show/23533039-ancillary-mercy"
+    },
+    {
+      "name": "This Changes Everything: Capitalism vs. The Climate",
+      "author": "Naomi Klein",
+      "url": "https://www.goodreads.com/book/show/23278622-this-changes-everything"
     }
   ],
   "music": [
     {
-      "artist": "KAYTRANADA",
-      "name": "0.001% ???",
-      "url": "https://soundcloud.com/kaytranada/0001a"
-    },
-    {
-      "artist": "KAYTRANADA",
-      "name": "99.9%",
-      "url": "http://kaytranada.com"
+      "artist": "BADBADNOTGOOD",
+      "name": "IV",
+      "url": "https://soundcloud.com/badbadnotgood/sets/iv-42"
     }
   ],
   "learning": [
