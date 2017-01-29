@@ -1,22 +1,32 @@
 {
-  "date": "2017-01-22",
+  "date": "2017-01-29",
   "books": [
     {
-      "name": "Ancillary Mercy",
-      "author": "Ann Leckie",
-      "url": "https://www.goodreads.com/book/show/23533039-ancillary-mercy"
+      "name": "A Darker Shade of Magic",
+      "author": "V.E. Schwab",
+      "url": "https://www.goodreads.com/book/show/22055262-a-darker-shade-of-magic"
     },
     {
-      "name": "This Changes Everything: Capitalism vs. The Climate",
-      "author": "Naomi Klein",
-      "url": "https://www.goodreads.com/book/show/23278622-this-changes-everything"
+      "name": "Waypoint Kangaroo",
+      "author": "Curtis C. Chen",
+      "url": "https://www.goodreads.com/book/show/26114364-waypoint-kangaroo"
     }
   ],
   "music": [
     {
-      "artist": "BADBADNOTGOOD",
-      "name": "IV",
-      "url": "https://soundcloud.com/badbadnotgood/sets/iv-42"
+      "artist": "Migos",
+      "name": "Culture",
+      "url": ""
+    },
+    {
+      "artist": "Loyle Carner",
+      "name": "Yesterday's Gone",
+      "url": ""
+    },
+    {
+      "artist": "The Drum Chord Theory",
+      "name": "Matt Martians",
+      "url": ""
     }
   ],
   "learning": [
