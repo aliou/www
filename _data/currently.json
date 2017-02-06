@@ -1,5 +1,5 @@
 {
-  "date": "2017-01-29",
+  "date": "2017-02-06",
   "books": [
     {
       "name": "A Darker Shade of Magic",
@@ -7,26 +7,21 @@
       "url": "https://www.goodreads.com/book/show/22055262-a-darker-shade-of-magic"
     },
     {
-      "name": "Waypoint Kangaroo",
-      "author": "Curtis C. Chen",
-      "url": "https://www.goodreads.com/book/show/26114364-waypoint-kangaroo"
+      "name": "The Fifth Season",
+      "author": "N. K. Jemisin",
+      "url": "https://www.goodreads.com/book/show/19161852-the-fifth-season"
     }
   ],
   "music": [
     {
-      "artist": "Migos",
-      "name": "Culture",
-      "url": ""
+      "artist": "BADBADNOTGOOD",
+      "name": "IV",
+      "url": "https://soundcloud.com/badbadnotgood/sets/iv-42"
     },
     {
-      "artist": "Loyle Carner",
-      "name": "Yesterday's Gone",
-      "url": ""
-    },
-    {
-      "artist": "Matt Martians",
-      "name": "The Drum Chord Theory",
-      "url": ""
+      "artist": "BADBADNOTGOOD",
+      "name": "III",
+      "url": "https://badbadnotgoodil.bandcamp.com/album/iii"
     }
   ],
   "learning": [
