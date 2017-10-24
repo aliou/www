@@ -1166,6 +1166,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
 .f4 { font-size: 1.25rem; }
 .f5 { font-size: 1rem; }
 .f6 { font-size: .875rem; }
+.f10 { font-size: .10rem; }
 /*
 
    TYPOGRAPHY
@@ -1656,6 +1657,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .f4-ns { font-size: 1.25rem; }
  .f5-ns { font-size: 1rem; }
  .f6-ns { font-size: .875rem; }
+ .f10-ns { font-size: .10rem; }
  .measure-ns { max-width: 30em; }
  .measure-wide-ns { max-width: 34em; }
  .measure-narrow-ns { max-width: 20em; }
@@ -1991,6 +1993,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .f4-m { font-size: 1.25rem; }
  .f5-m { font-size: 1rem; }
  .f6-m { font-size: .875rem; }
+ .f10-m { font-size: .10rem; }
  .measure-m { max-width: 30em; }
  .measure-wide-m { max-width: 34em; }
  .measure-narrow-m { max-width: 20em; }
@@ -2326,6 +2329,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .f4-l { font-size: 1.25rem; }
  .f5-l { font-size: 1rem; }
  .f6-l { font-size: .875rem; }
+ .f10-l { font-size: .10rem; }
  .measure-l { max-width: 30em; }
  .measure-wide-l { max-width: 34em; }
  .measure-narrow-l { max-width: 20em; }
