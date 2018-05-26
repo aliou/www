@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<article>
+  <a class='black no-underline underline-hover' href='{{ page.url }}'><p class='f3 ma0'>{{ page.title }}</p></a>
+  <time class='f6 tracked gray'>{{ page.date | date: '%B %-d, %Y' }}</time>
+
+  <p class='f4 lh-title'>
+    {{ content }}
+  </p>
+</article>
