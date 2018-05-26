@@ -12,3 +12,6 @@ exclude: [Gemfile, Gemfile.lock]
 
 assets:
   compression: true
+
+# Permalinks
+permalink: /posts/:year/:month/:title/

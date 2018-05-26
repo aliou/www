@@ -1,0 +1,12 @@
+//= require tachyons
+//= require syntax
+
+img {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
+}
+
+pre {
+  overflow: scroll;
+}

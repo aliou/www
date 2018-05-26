@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ page.title }}</title>
+    {% if page.title %}
+      <title>{{ page.title }} &mdash; {{ site.name }}</title>
+    {% else %}
+      <title>{{ site.name }}</title>
+    {% endif %}
+
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="{{ site.google.verification }}" />
     <meta name='author' content='{{ site.name }}' />
@@ -9,12 +14,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link href="https://micro.blog/aliou" rel="me" />
 
-    {% asset tachyons.css %}
+    {% asset styles.css %}
 
     {% include twitter.html %}
   </head>
-  <body class='sans-serif black bg-near-white'>
-    <div class='mh3 mt5 mh5-ns mt6-ns w-33-l w-50-m'>
+  <body class='sans-serif black bg-near-white pb5'>
+    <div class='mh3 mt5 mh5-ns mt6-ns w-40-l w-50-m w-34-ns'>
       {% include header.html %}
 
       {{ content }}
