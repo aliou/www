@@ -8,7 +8,7 @@ google:
 plugins:
   - jekyll-assets
 
-exclude: [Gemfile, Gemfile.lock, .circleci, vendor]
+exclude: [Gemfile, Gemfile.lock, .circleci, vendor, .ruby-version]
 
 assets:
   compression: true
