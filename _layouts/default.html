@@ -3,14 +3,23 @@
   <head>
     {% if page.title %}
       <title>{{ page.title }} &mdash; {{ site.name }}</title>
+      <meta name='og:title' content='{{ page.title }} &mdash; {{ site.name }}' />
     {% else %}
       <title>{{ site.name }}</title>
+      <meta name='og:title' content='{{ site.name }}' />
+    {% endif %}
+
+    {% if page.description %}
+      <meta name='description' content='{{ page.description }}' />
+      <meta name='og:description' content='{{ page.description }}' />
+    {% else %}
+      <meta name='description' content='{{ site.description }}' />
+      <meta name='og:description' content='{{ site.description }}' />
     {% endif %}
 
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="{{ site.google.verification }}" />
     <meta name='author' content='{{ site.name }}' />
-    <meta name='description' content='{{ site.description }}' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link href="https://micro.blog/aliou" rel="me" />
 
