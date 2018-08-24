@@ -12,6 +12,7 @@ exclude: [Gemfile, Gemfile.lock, .circleci, vendor, .ruby-version]
 
 assets:
   compression: true
+  gzip: true
 
 # Permalinks
 permalink: /posts/:year/:month/:title/
