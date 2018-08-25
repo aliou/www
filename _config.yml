@@ -2,6 +2,10 @@ name: Aliou Diallo
 description: Aliou Diallo is a developer living in Paris.
 twitter: '@aliouftw'
 
+author:
+  name: Aliou Diallo
+  url: https://aliou.me
+
 google:
   verification: 'QnLybeTUEt_VtHQVLLtEz0WflVe-H7TNqCOTlF-tfz8'
 
