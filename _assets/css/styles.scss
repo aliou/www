@@ -1,11 +1,6 @@
 //= require tachyons
 //= require syntax
 
-.highlight {
-  padding: 0.5em;
-  margin: 0;
-}
-
 img {
   width: -webkit-fill-available;
   width: -moz-available;
@@ -14,4 +9,11 @@ img {
 
 pre {
   overflow: scroll;
+}
+
+.highlight {
+  padding: 0.5em;
+  margin: 0;
+  background: #f0f0f0;
+  border-radius: 2px;
 }
