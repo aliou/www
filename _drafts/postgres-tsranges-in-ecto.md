@@ -4,8 +4,6 @@ title: Postgres tsranges in Ecto.
 description: Making a custom `Ecto.Type` to use a native Postgres type
 ---
 
-##### TODO: Style tweaks when using <code>``</code> in a sentence
-
 Let’s say we need to schedule chores between different members of a team in a spaceship. [^1]
 
 The simplest way to do this would be to store the period of our chore and who is
@@ -38,9 +36,10 @@ create(
 )
 ```
 
-## Creating the schema
+### Creating the schema
 
-##### TODO: Introduction about mapping data from the database to elixir with schemas:
+We now create our schema representing a Chore in the application. Let's try to
+use the `:tsrange` as the type of our chore period:
 
 ```elixir
 defmodule Chore do
@@ -68,22 +67,25 @@ Because `:tsrange` is not a type known by Ecto, we need to create our own type
 following the [`Ecto.Type` behaviour][ecto-type-behaviour].
 But first we'll create a struct that represents a timestamp range.
 
-## TimsetampRange
+### Creating a struct representing a range
 
 We'll store the informations needed by Postgres to create the range:
 
-We define our TimestampRange as a struct with the first and last elements of the
+We define our `Timestamp.Range` as a struct with the first and last elements of the
 range and with options regarding the inclusivity of those elements in the range.
 
-##### TODO: Explain why nil is in there
+<!--
+We allow `nil` values to represent the lack of first and last elements: an
+infinite range.
+-->
 
 ```elixir
-defmodule TimestampRange do
+defmodule Timestamp.Range do
   defstruct [:first, :last, opts: []]
 
   @type t :: %__MODULE__{
-          first: NaiveDateTime.t() | nil,
-          last: NaiveDateTime.t() | nil,
+          first: NaiveDateTime.t(),
+          last: NaiveDateTime.t(),
           opts: [
             lower_inclusive: boolean(),
             upper_inclusive: boolean()
@@ -92,7 +94,7 @@ defmodule TimestampRange do
 end
 ```
 
-We also define a convenience function to create a `TimestampRange`:
+We also define a convenience function to create a `Timestamp.Range`:
 
 ```elixir
 
@@ -112,7 +114,7 @@ end
 
 We can now represent a Postgres's `tsrange` in Elixir.
 
-## Implementing the `Ecto.Type` behaviour
+### Implementing the `Ecto.Type` behaviour
 The `Ecto.Type` behaviour expects four functions to be defined:
 - `type/0`: The underlying type of our custom type, known by either Ecto, or
     [Postgrex][].
@@ -132,7 +134,7 @@ def type, do: :tsrange
 The `cast` implementation is also straightforward: we only allow the custom type
 to be cast:
 ```elixir
-def cast(%TimestampRange{} = range), do: {:ok, range}
+def cast(%Timestamp.Range{} = range), do: {:ok, range}
 def cast(_), do: :error
 ```
 
@@ -143,7 +145,7 @@ The `load` implementation:
 ```elixir
 def load(%Postgrex.Range{} = range) do
   {:ok,
-    TimestampRange.new(
+    Timestamp.Range.new(
       range.lower,
       range.upper,
       lower_inclusive: range.lower_inclusive,
@@ -157,7 +159,7 @@ def load(_), do: :error
 
 The `dump` implementation:
 ```elixir
-def dump(%TimestampRange{} = range) do
+def dump(%Timestamp.Range{} = range) do
   [lower_inclusive: lower_inclusive, upper_inclusive: upper_inclusive] = range.opts
 
   {:ok,
@@ -172,12 +174,13 @@ end
 def dump(_), do: :error
 ```
 
-## Using in the schema
-##### TODO: Back to the schema
+### Using in the schema
+Now that we have our custom type, we can use in our schema:
+
 ```elixir
 schema "chores" do
   field(:note, :string)
-  field(:period, TimestampRange)
+  field(:period, Timestamp.Range)
 
   belongs_to(:user, User)
 
@@ -185,7 +188,11 @@ schema "chores" do
 end
 ```
 
-## Further reading
+And now our project compiles properly!
+
+##### TODO: Conclusion about having custom types to take advantage of Postgres many cool types.
+
+#### Further reading
 - <https://hexdocs.pm/ecto/2.2.10/Ecto.Type.html>
 - <https://www.postgresql.org/docs/10/static/rangetypes.html>
 - <https://tapoueh.org/blog/2018/04/postgresql-data-types-ranges>
