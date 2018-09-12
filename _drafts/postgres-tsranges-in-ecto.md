@@ -193,9 +193,9 @@ And now our project compiles properly!
 ##### TODO: Conclusion about having custom types to take advantage of Postgres many cool types.
 
 #### Further reading
-- <https://hexdocs.pm/ecto/2.2.10/Ecto.Type.html>
-- <https://www.postgresql.org/docs/10/static/rangetypes.html>
-- <https://tapoueh.org/blog/2018/04/postgresql-data-types-ranges>
+- Documentation on the [`Ecto.Type` behaviour](https://hexdocs.pm/ecto/2.2.10/Ecto.Type.html)
+- Documentation on [Postgres' range types](https://www.postgresql.org/docs/10/static/rangetypes.html)
+- More reading on [Postgres' range types](https://tapoueh.org/blog/2018/04/postgresql-data-types-ranges)
 
 <!-- TODO: Update when Ecto 3 comes out -->
 
