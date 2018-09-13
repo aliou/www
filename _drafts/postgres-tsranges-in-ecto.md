@@ -7,7 +7,7 @@ description: Making a custom `Ecto.Type` to use a native Postgres type
 Let’s say we need to schedule chores between different members of a team in a spaceship. [^1]
 
 The simplest way to do this would be to store the period of our chore and who is
-making it. With Ecto, the migration creating this table would look like this:
+assigned to it. With Ecto, the migration creating this table would look like this:
 
 ```elixir
 create table(:chores) do
@@ -19,8 +19,8 @@ create table(:chores) do
 end
 ```
 
-We also need to make sure a user can't have multiple chores at the same time.
-For this we'll add a constraint using our period:
+We also need to make sure a user can't have multiple chores overlapping with
+each other. For this we'll add add [an exclusion constraint][] on our period:
 
 ```elixir
 # Add the btree_gist extension to allow using `gist` indexes
@@ -64,7 +64,7 @@ Trying to compile this, we have an error:
 ```
 
 Because `:tsrange` is not a type known by Ecto, we need to create our own type
-following the [`Ecto.Type` behaviour][ecto-type-behaviour].
+following the [`Ecto.Type` behaviour][ecto-type-behaviour]{:target="_blank"}.
 But first we'll create a struct that represents a timestamp range.
 
 ### Creating a struct representing a range
@@ -72,7 +72,7 @@ But first we'll create a struct that represents a timestamp range.
 We'll store the informations needed by Postgres to create the range:
 
 We define our `Timestamp.Range` as a struct with the first and last elements of the
-range and with options regarding the inclusivity of those elements in the range.
+range and with options for the inclusivity of those elements in the range.
 
 <!--
 We allow `nil` values to represent the lack of first and last elements: an
@@ -117,14 +117,12 @@ We can now represent a Postgres's `tsrange` in Elixir.
 ### Implementing the `Ecto.Type` behaviour
 The `Ecto.Type` behaviour expects four functions to be defined:
 - `type/0`: The underlying type of our custom type, known by either Ecto, or
-    [Postgrex][].
+    [Postgrex][]{:target="_blank"}.
 - `cast/1`: A function to transform anything into our custom type.
 - `load/1`: A function to transform something from the database into our custom
     type.
 - `dump/1`: A function to transform our custom type into something understood by
     the database.
-
-##### TODO Stop saying straightforward pls
 
 The `type` implementation is straightforward:
 ```elixir
@@ -138,10 +136,8 @@ def cast(%Timestamp.Range{} = range), do: {:ok, range}
 def cast(_), do: :error
 ```
 
-##### TODO: description of load and dump and explanation of Postgrex.Range
-##### TODO: Explain why Postgrex.Range uses NaiveDateTime and not `Ecto.DateTime` (in footnote)[^2]
-
-The `load` implementation:
+The `load` implementation receives a `Postgrex.Range` and transforms it to a
+`Timestamp.Range`:
 ```elixir
 def load(%Postgrex.Range{} = range) do
   {:ok,
@@ -156,8 +152,8 @@ end
 def load(_), do: :error
 ```
 
-
-The `dump` implementation:
+And finally, the `dump` implementation take a `Timestamp.Range` and transforms
+it to a `Postgrex.Range`:
 ```elixir
 def dump(%Timestamp.Range{} = range) do
   [lower_inclusive: lower_inclusive, upper_inclusive: upper_inclusive] = range.opts
@@ -175,7 +171,7 @@ def dump(_), do: :error
 ```
 
 ### Using in the schema
-Now that we have our custom type, we can use in our schema:
+Now that we have our custom Ecto type, we can use it in our schema:
 
 ```elixir
 schema "chores" do
@@ -190,17 +186,16 @@ end
 
 And now our project compiles properly!
 
-##### TODO: Conclusion about having custom types to take advantage of Postgres many cool types.
+##### TODO: Conclusion about having custom types to take advantage of Postgres cool types.
 
 #### Further reading
-- Documentation on the [`Ecto.Type` behaviour](https://hexdocs.pm/ecto/2.2.10/Ecto.Type.html)
-- Documentation on [Postgres' range types](https://www.postgresql.org/docs/10/static/rangetypes.html)
-- More reading on [Postgres' range types](https://tapoueh.org/blog/2018/04/postgresql-data-types-ranges)
-
-<!-- TODO: Update when Ecto 3 comes out -->
+- Documentation on the [`Ecto.Type` behaviour](https://hexdocs.pm/ecto/2.2.10/Ecto.Type.html){:target="_blank"}
+- Documentation on [Postgres' range types](https://www.postgresql.org/docs/10/static/rangetypes.html){:target="_blank"}
+- More reading on [Postgres' range types](https://tapoueh.org/blog/2018/04/postgresql-data-types-ranges){:target="_blank"}
 
 [^1]: If you know me this [might be familiar][snapshift]{:target="_blank"}.
-[^2]: This example uses Ecto 3.0 so `PostgrexRange` uses `NaiveDateTime` instead of the deprecated type `Postgrex.DateTime`.
+<!-- [^2]: This example uses Ecto 3.0 so `PostgrexRange` uses `NaiveDateTime` instead of the deprecated type `Postgrex.DateTime`. -->
 [snapshift]: https://www.snapshift.co
 [ecto-type-behaviour]: https://hexdocs.pm/ecto/2.2.10/Ecto.Type.html
 [Postgrex]:  https://github.com/elixir-ecto/postgrex
+[an exclusion constraint]: https://www.postgresql.org/docs/current/static/ddl-constraints.html#DDL-CONSTRAINTS-EXCLUSION
