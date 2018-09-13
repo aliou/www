@@ -152,7 +152,7 @@ end
 def load(_), do: :error
 ```
 
-And finally, the `dump` implementation take a `Timestamp.Range` and transforms
+And finally, the `dump` implementation takes a `Timestamp.Range` and transforms
 it to a `Postgrex.Range`:
 ```elixir
 def dump(%Timestamp.Range{} = range) do
