@@ -4,6 +4,21 @@ title: Postgres timestamp ranges in Ecto
 description: Making a custom `Ecto.Type` to use a native Postgres type
 ---
 
+I recently read a post on [Postgres's range types][]{:target='blank'} and have
+been trying to use them more in my code.
+
+However, because some of these types aren't shared between the different SQL
+database, most <!-- Object Relation Mapping like [Ruby's ActiveRecord][] and -->
+database wrappers (e.g. [Elixir's Ecto][]{:target='blank'}) don't support them.
+
+Thankfully, Ecto allows us to define our custom types that can represent a
+unknown database type. We'll now try to implement one.
+
+[Postgres's range types]: https://tapoueh.org/blog/2018/04/postgresql-data-types-ranges
+[Ruby's ActiveRecord]: https://guides.rubyonrails.org/active_record_basics.html
+[Elixir's Ecto]: https://hexdocs.pm/ecto/Ecto.html
+
+-----
 Let’s say we need to schedule chores between different members of a team in a spaceship. [^1]
 
 The simplest way to do this would be to store the period of our chore and who is
