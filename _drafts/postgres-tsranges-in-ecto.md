@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Postgres tsranges in Ecto.
+title: Postgres timestamp ranges in Ecto
 description: Making a custom `Ecto.Type` to use a native Postgres type
 ---
 
@@ -117,7 +117,7 @@ We can now represent a Postgres's `tsrange` in Elixir.
 ### Implementing the `Ecto.Type` behaviour
 The `Ecto.Type` behaviour expects four functions to be defined:
 - `type/0`: The underlying type of our custom type, known by either Ecto, or
-    [Postgrex][]{:target="_blank"}.
+    <a href='https://github.com/elixir-ecto/postgrex' target='_blank'>Postgrex</a>
 - `cast/1`: A function to transform anything into our custom type.
 - `load/1`: A function to transform something from the database into our custom
     type.
@@ -197,5 +197,5 @@ And now our project compiles properly!
 <!-- [^2]: This example uses Ecto 3.0 so `PostgrexRange` uses `NaiveDateTime` instead of the deprecated type `Postgrex.DateTime`. -->
 [snapshift]: https://www.snapshift.co
 [ecto-type-behaviour]: https://hexdocs.pm/ecto/2.2.10/Ecto.Type.html
-[Postgrex]:  https://github.com/elixir-ecto/postgrex
+[Postgrex]: https://github.com/elixir-ecto/postgrex
 [an exclusion constraint]: https://www.postgresql.org/docs/current/static/ddl-constraints.html#DDL-CONSTRAINTS-EXCLUSION
