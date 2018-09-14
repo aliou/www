@@ -5,14 +5,15 @@ description: Making a custom `Ecto.Type` to use a native Postgres type
 ---
 
 I recently read a post on [Postgres's range types][]{:target='blank'} and have
-been trying to use them more in my code.
+been trying to take advantage of them in my code.
 
 However, because some of these types aren't shared between the different SQL
-database, most <!-- Object Relation Mapping like [Ruby's ActiveRecord][] and -->
+databases, most <!-- Object Relation Mapping like [Ruby's ActiveRecord][] and -->
 database wrappers (e.g. [Elixir's Ecto][]{:target='blank'}) don't support them.
 
-Thankfully, Ecto allows us to define our custom types that can represent a
-unknown database type. We'll now try to implement one.
+Thankfully, Ecto allows us to define our custom types that can represent an
+unknown database type. We'll now try to implement one to represent timestamp
+ranges.
 
 [Postgres's range types]: https://tapoueh.org/blog/2018/04/postgresql-data-types-ranges
 [Ruby's ActiveRecord]: https://guides.rubyonrails.org/active_record_basics.html
@@ -21,21 +22,21 @@ unknown database type. We'll now try to implement one.
 -----
 Let’s say we need to schedule chores between different members of a team in a spaceship. [^1]
 
-The simplest way to do this would be to store the period of our chore and who is
+The simplest way to do this would be to store the range of our chore and who is
 assigned to it. With Ecto, the migration creating this table would look like this:
 
 ```elixir
 create table(:chores) do
   add(:user_id, references("users"), null: false)
   add(:note, :string)
-  add(:period, :tsrange)
+  add(:range, :tsrange, null: false)
 
   timestamps(default: fragment("NOW()"))
 end
 ```
 
 We also need to make sure a user can't have multiple chores overlapping with
-each other. For this we'll add add [an exclusion constraint][] on our period:
+each other. For this we'll add add [an exclusion constraint][] on our range:
 
 ```elixir
 # Add the btree_gist extension to allow using `gist` indexes
@@ -46,7 +47,7 @@ create(
   constraint(
     "chores",
     :no_overlaping_chores_for_user,
-    exclude: ~s|gist (user_id with =, period with &&)|
+    exclude: ~s|gist (user_id with =, range with &&)|
   )
 )
 ```
@@ -54,7 +55,7 @@ create(
 ### Creating the schema
 
 We now create our schema representing a Chore in the application. Let's try to
-use the `:tsrange` as the type of our chore period:
+use the `:tsrange` as the type of our chore range:
 
 ```elixir
 defmodule Chore do
@@ -62,7 +63,7 @@ defmodule Chore do
 
   schema "chores" do
     field(:note, :string)
-    field(:period, :tsrange)
+    field(:range, :tsrange)
 
     belongs_to(:user, User)
 
@@ -75,7 +76,7 @@ Trying to compile this, we have an error:
 ```
 == Compilation error in file lib/chore.ex ==
 ** (ArgumentError) invalid or unknown type :tsrange
-    for field :period
+    for field :range
 ```
 
 Because `:tsrange` is not a type known by Ecto, we need to create our own type
@@ -191,7 +192,7 @@ Now that we have our custom Ecto type, we can use it in our schema:
 ```elixir
 schema "chores" do
   field(:note, :string)
-  field(:period, Timestamp.Range)
+  field(:range, Timestamp.Range)
 
   belongs_to(:user, User)
 
