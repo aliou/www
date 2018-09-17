@@ -37,7 +37,7 @@ end
 ```
 
 We also need to make sure a user can't have multiple chores overlapping with
-each other. For this we'll add add [an exclusion constraint][]{:target='blank'} on our range:
+each other. For this we'll add [an exclusion constraint][]{:target='blank'} on our range:
 
 ```elixir
 # Add the btree_gist extension to allow using `gist` indexes
@@ -55,7 +55,7 @@ create(
 
 ### Creating the schema
 
-We now create our schema representing a Chore in the application. Let's try to
+We now create our schema representing a chore in the application. Let's try to
 use the `:tsrange` as the type of our chore range:
 
 ```elixir
@@ -92,7 +92,7 @@ But first we'll create a struct that represents a timestamp range.
 
 ### Creating a struct representing a range
 
-We'll store the informations needed by Postgres to create the range:
+We'll store the information needed by Postgres to create the range:
 
 We define our `Timestamp.Range` as a struct with the first and last elements of the
 range and with options for the inclusivity of those elements in the range.
