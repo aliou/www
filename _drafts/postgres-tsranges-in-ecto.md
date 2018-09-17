@@ -70,6 +70,12 @@ defmodule Chore do
 
     timestamps()
   end
+
+  def changeset(chore, attrs) do
+    chore
+    |> cast(attrs, [:user_id, :note, :range])
+    |> validate_required([:user_id, :range])
+  end
 end
 ```
 
@@ -189,6 +195,7 @@ def dump(_), do: :error
 ```
 
 ### Using in the schema
+
 Now that we have our custom Ecto type, we can use it in our schema:
 
 ```elixir
@@ -202,7 +209,23 @@ schema "chores" do
 end
 ```
 
-And now our project compiles properly!
+And we can insert new chores into the table:
+
+```
+iex(1)> range_start = ~N[2018-09-17 10:00:00]
+iex(2)> range_end = ~N[2018-09-17 12:00:00]
+iex(3)> attrs = %{user_id: 1, range: Timestamp.Range.new(range_start, range_end)}
+iex(4)> Chore.changeset(%Chore{}, attrs) |> Repo.insert!
+%Radch.Chore{
+  __meta__: #Ecto.Schema.Metadata<:loaded, "chores">,
+  id: 1,
+  note: nil,
+  range: #Timestamp.Range<~N[2018-09-17 10:00:00], ~N[2018-09-17 12:00:00]>,
+  user_id: 1
+  updated_at: ~N[2018-09-17 16:30:05],
+  inserted_at: ~N[2018-09-17 16:30:05],
+}
+```
 
 -----
 
