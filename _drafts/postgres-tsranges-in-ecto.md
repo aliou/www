@@ -211,7 +211,7 @@ end
 
 And we can insert new chores into the table:
 
-```
+```elixir
 iex(1)> range_start = ~N[2018-09-17 10:00:00]
 iex(2)> range_end = ~N[2018-09-17 12:00:00]
 iex(3)> attrs = %{user_id: 1, range: Timestamp.Range.new(range_start, range_end)}
