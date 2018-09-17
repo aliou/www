@@ -20,6 +20,7 @@ ranges.
 [Elixir's Ecto]: https://hexdocs.pm/ecto/Ecto.html
 
 -----
+
 Let’s say we need to schedule chores between different members of a team in a spaceship. [^1]
 
 The simplest way to do this would be to store the range of our chore and who is
@@ -36,7 +37,7 @@ end
 ```
 
 We also need to make sure a user can't have multiple chores overlapping with
-each other. For this we'll add add [an exclusion constraint][] on our range:
+each other. For this we'll add add [an exclusion constraint][]{:target='blank'} on our range:
 
 ```elixir
 # Add the btree_gist extension to allow using `gist` indexes
@@ -79,7 +80,7 @@ Trying to compile this, we have an error:
     for field :range
 ```
 
-Because `:tsrange` is not a type known by Ecto, we need to create our own type
+Because `:tsrange` is not a type known by Ecto, we will need to create our own type
 following the [`Ecto.Type` behaviour][ecto-type-behaviour]{:target="_blank"}.
 But first we'll create a struct that represents a timestamp range.
 
@@ -132,7 +133,7 @@ We can now represent a Postgres's `tsrange` in Elixir.
 
 ### Implementing the `Ecto.Type` behaviour
 The `Ecto.Type` behaviour expects four functions to be defined:
-- `type/0`: The underlying type of our custom type, known by either Ecto, or
+- `type/0`: The underlying type of our custom type, known by either Ecto or
     <a href='https://github.com/elixir-ecto/postgrex' target='_blank'>Postgrex</a>
 - `cast/1`: A function to transform anything into our custom type.
 - `load/1`: A function to transform something from the database into our custom
@@ -140,12 +141,12 @@ The `Ecto.Type` behaviour expects four functions to be defined:
 - `dump/1`: A function to transform our custom type into something understood by
     the database.
 
-The `type` implementation is straightforward:
+The `type` implementation:
 ```elixir
 def type, do: :tsrange
 ```
 
-The `cast` implementation is also straightforward: we only allow the custom type
+The `cast` implementation: we only allow the custom type
 to be cast:
 ```elixir
 def cast(%Timestamp.Range{} = range), do: {:ok, range}
@@ -154,6 +155,7 @@ def cast(_), do: :error
 
 The `load` implementation receives a `Postgrex.Range` and transforms it to a
 `Timestamp.Range`:
+
 ```elixir
 def load(%Postgrex.Range{} = range) do
   {:ok,
@@ -202,7 +204,9 @@ end
 
 And now our project compiles properly!
 
-##### TODO: Conclusion about having custom types to take advantage of Postgres cool types.
+-----
+
+
 
 #### Further reading
 - Documentation on the [`Ecto.Type` behaviour](https://hexdocs.pm/ecto/2.2.10/Ecto.Type.html){:target="_blank"}
