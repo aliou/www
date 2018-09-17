@@ -194,7 +194,7 @@ end
 def dump(_), do: :error
 ```
 
-### Using in the schema
+### Using our new type in the schema
 
 Now that we have our custom Ecto type, we can use it in our schema:
 
