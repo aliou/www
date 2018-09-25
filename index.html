@@ -1,17 +1,11 @@
 ---
-layout: default
+layout: page
+title: Posts
 ---
 
-<p class='f3 mt0'><a class='no-underline js-random-url' href='#' target='_blank'>👋🏾</a> Hey!</p>
-<p class='f3 lh-title'>
-  I’m Aliou Diallo, a developer based in Paris.
-  I currently work at
-  <a class='fw5 black' href='https://snapshift.co/' target='_blank'
-    aria-label="Snapshift's website">Snapshift</a>.
-</p>
-<p class='f4 lh-title'>
-  I've recently been trying to write about stuff I learn. My last post is about <a class='fw5 black' href='/posts/2018/09/postgres-tsranges-in-ecto/'>how to use Postgres' timestamp ranges with Elixir's Ecto</a>.
-</p>
-<p class='f4 lh-title'>
-  You can contact me by email at the current year @ this domain name.
-</p>
+{% for post in site.posts %}
+  <article class='mb3 bbt'>
+    <a class='black no-underline underline-hover' href='{{ post.url }}'><p class='f3 ma0'>{{ post.title }}</p></a>
+    <time class='f6 tracked gray'>{{ post.date | date: '%B %-d, %Y' }}</time>
+  </article>
+{% endfor %}
