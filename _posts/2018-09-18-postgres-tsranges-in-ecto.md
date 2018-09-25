@@ -227,9 +227,10 @@ iex(4)> Chore.changeset(%Chore{}, attrs) |> Repo.insert!
 }
 ```
 
+<small>Thanks to <a href='https://twitter.com/caouibachir' target="_blank">Bachir Çaoui</a> for reviewing a
+draft version of this post.</small>
+
 -----
-
-
 
 #### Further reading
 - Documentation on the [`Ecto.Type` behaviour](https://hexdocs.pm/ecto/2.2.10/Ecto.Type.html){:target="_blank"}
