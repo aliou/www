@@ -87,7 +87,7 @@ Trying to compile this, we have an error:
 ```
 
 Because `:tsrange` is not a type known by Ecto, we will need to create our own type
-following the [`Ecto.Type` behaviour][ecto-type-behaviour]{:target="_blank"}.
+adopting the [`Ecto.Type` behaviour][ecto-type-behaviour]{:target="_blank"}.
 But first we'll create a struct that represents a timestamp range.
 
 ### Creating a struct representing a range
@@ -152,7 +152,7 @@ The `type` implementation:
 def type, do: :tsrange
 ```
 
-The `cast` implementation: we only allow the custom type
+The `cast` implementation: we only allow our custom type
 to be cast:
 ```elixir
 def cast(%Timestamp.Range{} = range), do: {:ok, range}
@@ -233,12 +233,12 @@ draft version of this post.</small>
 -----
 
 #### Further reading
-- Documentation on the [`Ecto.Type` behaviour](https://hexdocs.pm/ecto/2.2.10/Ecto.Type.html){:target="_blank"}
+- Documentation on the [`Ecto.Type` behaviour](https://hexdocs.pm/ecto/3.0.0/Ecto.Type.html){:target="_blank"}
 - Documentation on [Postgres' range types](https://www.postgresql.org/docs/10/static/rangetypes.html){:target="_blank"}
 - More reading on [Postgres' range types](https://tapoueh.org/blog/2018/04/postgresql-data-types-ranges){:target="_blank"}
 
 [^1]: If you know me this [might be familiar][snapshift]{:target="_blank"}.
-<!-- [^2]: This example uses Ecto 3.0 so `PostgrexRange` uses `NaiveDateTime` instead of the deprecated type `Postgrex.DateTime`. -->
+
 [snapshift]: https://www.snapshift.co
 [ecto-type-behaviour]: https://hexdocs.pm/ecto/2.2.10/Ecto.Type.html
 [Postgrex]: https://github.com/elixir-ecto/postgrex
