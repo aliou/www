@@ -2,6 +2,7 @@
 layout: post
 title: Postgres timestamp ranges in Ecto
 description: Making a custom `Ecto.Type` to use a native Postgres type
+tags: [elixir, ecto, postgres]
 ---
 
 I recently read a post on [Postgres's range types][]{:target='blank'} and have

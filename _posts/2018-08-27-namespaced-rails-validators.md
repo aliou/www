@@ -2,6 +2,7 @@
 layout: post
 title: Namespaced Rails validators
 description: How to namespace custom Rails validators
+tags: [ruby, rails]
 ---
 
 While going source spelunking, I came across this piece of code in Rails'

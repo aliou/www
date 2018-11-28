@@ -2,6 +2,7 @@
 layout: post
 title: A global .gitignore
 description: How to have a global gitignore that applies to all repos
+tags: [git, tools]
 ---
 A small tip that I've come across recently: It is possible to have a global `.gitignore` file
 that applies to every Git repository on your machine.
