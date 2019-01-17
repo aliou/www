@@ -12,7 +12,7 @@ TIL I learned that their are different ways to ignore files in Git:
 ### 1. Using a `.gitignore` file in a repository
 When created in a Git repository, this `.gitignore` is only applied to the
 directory it is in and its children. This means that you can ignore files in the
-whole repository and only in subdirectories.
+whole repository and also ignore some files in some subdirectories.
 
 Start by creating a `.gitignore` in a subdirectory:
 
@@ -74,7 +74,6 @@ git config --global core.excludesfile ~/.gitignore
 
 I use it to ignore file I never want to be committed, e.g. backup or temporary
 files, build  artifacts, etc.
-
 
 -----
 
