@@ -4,8 +4,10 @@ title: Posts
 ---
 
 {% for post in site.posts %}
-  <article class='mb3 bbt'>
-    <a class='black no-underline underline-hover' href='{{ post.url }}'><p class='f3 ma0'>{{ post.title }}</p></a>
-    <time class='f6 tracked gray'>{{ post.date | date: '%B %-d, %Y' }}</time>
-  </article>
+  {% unless post.hidden  %}
+    <article class='mb3 bbt'>
+      <a class='black no-underline underline-hover' href='{{ post.url }}'><p class='f3 ma0'>{{ post.title }}</p></a>
+      <time class='f6 tracked gray'>{{ post.date | date: '%B %-d, %Y' }}</time>
+    </article>
+  {% endunless %}
 {% endfor %}
