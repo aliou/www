@@ -33,7 +33,7 @@ With the following directory structure:
 
 This file should be version-controlled and includes files that all developers working on the repository will want to ignore.
 
-### 2. Using th local exclusion file `.git/info/exclude`
+### 2. Using the local exclusion file `.git/info/exclude`
 
 Start by creating the `info` directory and the exclude file in our repository
 `.git` directory:
