@@ -228,6 +228,8 @@ iex(4)> Chore.changeset(%Chore{}, attrs) |> Repo.insert!
 }
 ```
 
+The code examples in this post are also available [on GitHub](https://github.com/aliou/radch){:target="blank"}.
+
 <small>Thanks to <a href='https://twitter.com/caouibachir' target="_blank">Bachir Çaoui</a> for reviewing a
 draft version of this post.</small>
 
