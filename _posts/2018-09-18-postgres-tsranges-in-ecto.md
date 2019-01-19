@@ -9,7 +9,7 @@ I recently read a post on [Postgres's range types][]{:target='blank'} and have
 been trying to take advantage of them in my code.
 
 However, because some of these types aren't shared between the different SQL
-databases, most <!-- Object Relation Mapping like [Ruby's ActiveRecord][] and -->
+databases, most Object Relation Mapping like [Ruby on Rails's ActiveRecord][] and
 database wrappers (e.g. [Elixir's Ecto][]{:target='blank'}) don't support them.
 
 Thankfully, Ecto allows us to define our custom types that can represent an
@@ -17,7 +17,7 @@ unknown database type. We'll now try to implement one to represent timestamp
 ranges.
 
 [Postgres's range types]: https://tapoueh.org/blog/2018/04/postgresql-data-types-ranges
-[Ruby's ActiveRecord]: https://guides.rubyonrails.org/active_record_basics.html
+[Ruby on Rails's ActiveRecord]: https://guides.rubyonrails.org/active_record_basics.html
 [Elixir's Ecto]: https://hexdocs.pm/ecto/Ecto.html
 
 -----
@@ -80,7 +80,7 @@ defmodule Chore do
 end
 ```
 
-Trying to compile this, we have an error:
+When compiling this, we have an error:
 ```
 == Compilation error in file lib/chore.ex ==
 ** (ArgumentError) invalid or unknown type :tsrange
@@ -91,9 +91,7 @@ Because `:tsrange` is not a type known by Ecto, we will need to create our own t
 adopting the [`Ecto.Type` behaviour][ecto-type-behaviour]{:target="_blank"}.
 But first we'll create a struct that represents a timestamp range.
 
-### Creating a struct representing a range
-
-We'll store the information needed by Postgres to create the range:
+### Representing our Range
 
 We define our `Timestamp.Range` as a struct with the first and last elements of the
 range and with options for the inclusivity of those elements in the range.
@@ -228,9 +226,8 @@ iex(4)> Chore.changeset(%Chore{}, attrs) |> Repo.insert!
 }
 ```
 
-The code examples in this post are also available [on GitHub](https://github.com/aliou/radch){:target="blank"}.
-
-<small>Thanks to <a href='https://twitter.com/caouibachir' target="_blank">Bachir Çaoui</a> for reviewing a
+<small>The code examples in this post are also available [on GitHub](https://github.com/aliou/radch){:target="blank"}.
+Thanks to <a href='https://twitter.com/caouibachir' target="_blank">Bachir Çaoui</a> for reviewing a
 draft version of this post.</small>
 
 -----
@@ -243,6 +240,6 @@ draft version of this post.</small>
 [^1]: If you know me this [might be familiar][snapshift]{:target="_blank"}.
 
 [snapshift]: https://www.snapshift.co
-[ecto-type-behaviour]: https://hexdocs.pm/ecto/2.2.10/Ecto.Type.html
+[ecto-type-behaviour]: https://hexdocs.pm/ecto/3.0.6/Ecto.Type.html
 [Postgrex]: https://github.com/elixir-ecto/postgrex
 [an exclusion constraint]: https://www.postgresql.org/docs/current/static/ddl-constraints.html#DDL-CONSTRAINTS-EXCLUSION
