@@ -2,6 +2,7 @@
 layout: post
 title: Postgres timestamp ranges in Ecto
 description: Making a custom `Ecto.Type` to use a native Postgres type
+revisions: https://github.com/aliou/www/commits/master/_posts/2018-09-18-postgres-tsranges-in-ecto.md
 tags: [elixir, ecto, postgres]
 ---
 
