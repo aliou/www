@@ -72,7 +72,7 @@ class Ship < ApplicationRecord
 end
 ```
 
-While this does what we want, this can be improved by using creating a custom type.
+While this does what we want, this can be improved by creating a custom type.
 
 ### Creating a custom type
 We create our custom type by inheriting from `ActiveRecord::Type::Value` and overriding the necessary methods:
@@ -80,7 +80,7 @@ We create our custom type by inheriting from `ActiveRecord::Type::Value` and ove
 - `cast` is the method called by ActiveRecord when setting the attribute in the model.
 In our case, we will instantiate our value object.
 - `deserialize` converts the value from the database to our value object. By default it calls `cast`.
-- `serialize` converts the value from our value object to a type that the database understand.
+- `serialize` converts the value from our value object to a type that the database understand. In our case, we'll send back the string containing the raw category.
 
 For our type this looks like this:
 ```ruby
