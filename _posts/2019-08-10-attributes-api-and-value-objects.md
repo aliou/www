@@ -6,7 +6,7 @@ description: >
 tags: [rails]
 ---
 
-Continuing my deep diving of Rails features [^1], I recently read about the [Attributes API][attributes-api-docs]{:target="_blank"} and
+Continuing my deep dive into Rails features [^1], I recently read about the [Attributes API][attributes-api-docs]{:target="_blank"} and
 more particularly about how it can be used with custom types.
 
 [attributes-api-docs]: https://api.rubyonrails.org/classes/ActiveRecord/Attributes/ClassMethods.html
@@ -80,9 +80,9 @@ We create our custom type by inheriting from `ActiveRecord::Type::Value` and ove
 - `cast` is the method called by ActiveRecord when setting the attribute in the model.
 In our case, we will instantiate our value object.
 - `deserialize` converts the value from the database to our value object. By default it calls `cast`.
-- `serialize` converts the value from our value object to a type that the database understand. In our case, we'll send back the string containing the raw category.
+- `serialize` converts the value from our value object to a type that the database understands. In our case, we'll send back the string containing the raw category.
 
-For our type this looks like this:
+For our type it looks like this:
 ```ruby
 # app/types/ship_category.rb
 
