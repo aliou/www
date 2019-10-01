@@ -44,7 +44,7 @@ class Admin < ApplicationRecord
 end
 ```
 
-[`active_model/validations/validates.rb`]: https://github.com/rails/rails/blob/v5.2.1/activemodel/lib/active_model/validations.rb
+[`active_model/validations/validates.rb`]: https://github.com/rails/rails/blob/5-2-stable/activemodel/lib/active_model/validations/validates.rb#L116-L122
 
 <small>Thanks to <a href='https://twitter.com/caouibachir' target="_blank">Bachir Çaoui</a> for reviewing a
 draft version of this post.</small>
