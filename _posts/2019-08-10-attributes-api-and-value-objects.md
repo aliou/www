@@ -15,7 +15,7 @@ more particularly about how it can be used with custom types.
 
 The `attributes` method allows you to define an attribute with a type on a model. This type can be a completely custom.  
 
-In our example, we have spaceships that are defined by their category. Those categories are immutable and interchangeable and are good candidates for to be transformed into [value objects][value-objects]{:target="_blank"}.
+In our example, we have spaceships that are defined by their category. Those categories are both immutable and interchangeable, and are good candidates to be transformed into [value objects][value-objects]{:target="_blank"}.
 
 [value-objects]: https://www.martinfowler.com/bliki/ValueObject.html
 
@@ -80,7 +80,7 @@ We create our custom type by inheriting from `ActiveRecord::Type::Value` and ove
 - `cast` is the method called by ActiveRecord when setting the attribute in the model.
 In our case, we will instantiate our value object.
 - `deserialize` converts the value from the database to our value object. By default it calls `cast`.
-- `serialize` converts the value from our value object to a type that the database understands. In our case, we'll send back the string containing the raw category.
+- `serialize` converts our value object to a type that the database understands. In our case, we'll send back the string containing the raw category.
 
 For our type it looks like this:
 ```ruby
@@ -108,10 +108,12 @@ end
 ### Registering our type
 
 Now that our type is created, we need to register it so ActiveRecord knows about it:
+
 ```ruby
 # config/initializers/types.rb
 ActiveRecord::Type.register(:ship_category, CategoryType)
 ```
+<small class='ma0'>You will need to restart your Rails server or re-register your type every time you update it.</small>
 
 ### Using it in our model
 Finally, we can use it in our model:
@@ -126,12 +128,14 @@ end
 
 ---
 
-TODO: Add what we gain from using our custom type and the attributes API:
-- Let rails handle the instantiation of our value objects
-- Feels cleaner
+At this point, you might be wondering: *Why would I do this?*
+Personally, I feel like it is *cleaner* to let Rails handle the instantiation of objects instead of the usual memoization-with-instance-variables dance.
 
-TODO: Edit this ?
-This is bad if you limit the possible value of your value object. Indeed, inserting a row in the `ships` with a type that is not in our `VALID_CATEGORIES` constant will make your application throw an error when retrieving that row and instantiating into a `Ship` object:
+Furthermore, it allows you to add additional features to your model without having pollute the model class. In our case, we allow our ships to be compared based on their categories by implementing [Comparable][]{:target="_blank"} in our Category.
+
+[Comparable]: https://ruby-doc.org/core/Comparable.html
+
+However, there are ways to make this particular use case fall down. In our example above, we limit the category to the values defined in `VALID_CATEGORIES`. This means that creating a row in our database with a value that isn't valid will make our application raise when trying to instantiate the row into a `Ship` object:
 
 ```sql
 INSERT INTO ships(id, name, category, created_at, updated_at)
@@ -143,8 +147,8 @@ enterprise = Ship.find(10)
 # => Error: invalid category 'interstellar_liner'
 ```
 
-TODO: idk, explain that it is a simple example ?
-This example is might be too simple something something. To achieve a similar result, you could also define the categories as a ActiveRecord Enum, as a Postgres Enum[^2] or even have them in their own table and have an association between a Ship and its category.
+For the purpose of this blog post, I chose a fairly simple example to present the attributes API.
+To achieve a similar result, you could also define the categories as a ActiveRecord Enum, as a Postgres Enum[^2] or even have them in their own table and have a Postgres association between a Ship and its category, that is backed by a foreign Key to achieve integrity of your data.
 
 [^1]: See my previous post about [Namespaced Rails validators](/posts/2018/08/namespaced-rails-validators/).
 [^2]: However, this would require you to change your schema format to `:sql` or to override Rails's Schema dumper to handle Postgres Enums (But more on that in a future post).
