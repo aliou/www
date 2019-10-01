@@ -2,7 +2,8 @@
 layout: post
 title: Using Rails's Attributes API to serialize Value Objects
 description: >
-  TBD
+  How the Rails's Attributes API allows you to use value object in association with your models.
+image: https://img.aliou.me/blog/spacex-falcon-9-rocket.jpg
 tags: [rails]
 ---
 
