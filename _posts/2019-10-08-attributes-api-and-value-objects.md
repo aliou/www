@@ -148,8 +148,9 @@ enterprise = Ship.find(10)
 # => Error: invalid category 'interstellar_liner'
 ```
 
+---
+
 For the purpose of this blog post, I chose a fairly simple example to present the attributes API.
 To achieve a similar result, you could also define the categories as a ActiveRecord Enum, as a Postgres Enum[^2] or even have them in their own table and have a Postgres association between a Ship and its category, that is backed by a foreign Key to achieve integrity of your data.
-
 [^1]: See my previous post about [Namespaced Rails validators](/posts/2018/08/namespaced-rails-validators/).
 [^2]: However, this would require you to change your schema format to `:sql` or to override Rails's Schema dumper to handle Postgres Enums (But more on that in a future post).
