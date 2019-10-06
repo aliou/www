@@ -8,9 +8,9 @@
 {% endif %}
 
 {% if page.description %}
-  <meta name='twitter:description' content="{{ page.description }}" />
+  <meta name='twitter:description' content="{{ page.description | xml_escape }}" />
 {% else %}
-  <meta name='twitter:description' content="{{ site.description }}" />
+  <meta name='twitter:description' content="{{ site.description | xml_escape }}" />
 {% endif %}
 
 {% if page.image %}
