@@ -1,3 +1,11 @@
+{% if page.title %}
+  <title>{{ page.title }} &mdash; {{ site.name }}</title>
+  <meta name='og:title' content="{{ page.title }} - {{ site.name }}" />
+{% else %}
+  <title>{{ site.name }}</title>
+  <meta name='og:title' content='{{ site.name }}' />
+{% endif %}
+
 <meta name='twitter:site' content='{{ site.twitter }}' />
 <meta name='twitter:title' content='{{ site.name }}' />
 
@@ -8,8 +16,12 @@
 {% endif %}
 
 {% if page.description %}
+  <meta name='description' content="{{ page.description | xml_escape }}" />
+  <meta name='og:description' content="{{ page.description | xml_escape }}" />
   <meta name='twitter:description' content="{{ page.description | xml_escape }}" />
 {% else %}
+  <meta name='description' content="{{ site.description | xml_escape }}" />
+  <meta name='og:description' content="{{ site.description | xml_escape }}" />
   <meta name='twitter:description' content="{{ site.description | xml_escape }}" />
 {% endif %}
 

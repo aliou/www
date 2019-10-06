@@ -1,21 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    {% if page.title %}
-      <title>{{ page.title }} &mdash; {{ site.name }}</title>
-      <meta name='og:title' content='{{ page.title }} &mdash; {{ site.name }}' />
-    {% else %}
-      <title>{{ site.name }}</title>
-      <meta name='og:title' content='{{ site.name }}' />
-    {% endif %}
 
-    {% if page.description %}
-      <meta name='description' content='{{ page.description }}' />
-      <meta name='og:description' content='{{ page.description }}' />
-    {% else %}
-      <meta name='description' content='{{ site.description }}' />
-      <meta name='og:description' content='{{ site.description }}' />
-    {% endif %}
+    {% include meta.html %}
 
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="{{ site.google.verification }}" />
@@ -25,7 +12,6 @@
 
     {% asset styles.css %}
 
-    {% include twitter.html %}
   </head>
   <body class='sans-serif black pb5'>
     <div class='center measure-wide f5 pv5 ph2'>
