@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-
     {% include meta.html %}
 
     <meta charset="UTF-8">
@@ -10,16 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link href="{{ page.url | absolute_url }}" rel="canonical" />
 
-    {% asset styles.css %}
-
+    <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+    <link rel="stylesheet" type="text/css" href="/assets/code.css">
   </head>
-  <body class='sans-serif black pb5'>
-    <div class='center measure-wide f5 pv5 ph2'>
-      {% include header.html %}
-
+  <body class='container light'>
+    {% include header.html %}
+    <main class='content'>
       {{ content }}
-    </div>
+    </main>
   </body>
-  {% asset app.js %}
+  <script src="/assets/app.js" type="text/javascript"></script>
   {% include fathom.html %}
 </html>

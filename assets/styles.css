@@ -1,0 +1,182 @@
+:root {
+  /* Colors */
+  --brand-dark: #222222;
+  --brand-light: #f9fcf6;
+  --brand-highlight: #0e7e84;
+
+  /* Transition variables. */
+  --duration: 1s;
+  --timing: ease-in-out;
+
+  /* Variable updated by the color scheme. */
+  --foreground-color: var(--brand-dark);
+  --background-color: var(--brand-light);
+}
+
+::selection {
+  background: var(--brand-highlight);
+  color: var(--background-color);
+  text-shadow: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Reverse the colors in dark theme. */
+    --foreground-color: var(--brand-light);
+    --background-color: var(--brand-dark);
+  }
+}
+
+/* Manually toggle dark mode by adding this class to the body. */
+.light {
+  --foreground-color: var(--brand-dark);
+  --background-color: var(--brand-light);
+}
+
+.dark {
+  --foreground-color: var(--brand-light);
+  --background-color: var(--brand-dark);
+}
+
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+html {
+  max-width: 68rem;
+  margin: 0 auto;
+  font-size: 100%;
+}
+
+body {
+  /* Theme colors, with transition when changing the theme. */
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+  transition: color var(--duration) var(--timing),
+    background-color var(--duration) var(--timing);
+}
+
+a {
+  color: var(--brand-highlight);
+}
+
+a.header-link {
+  text-decoration: none;
+  color: var(--foreground-color);
+  padding: 0.2em 0;
+}
+
+a.header-link:hover {
+  color: var(--background-color);
+  background-color: var(--brand-highlight);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42rem;
+  padding: 2.625rem 1.3125rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.625rem;
+}
+
+@media (max-width: 500px) {
+  header {
+    flex-direction: column;
+  }
+}
+
+.header-title {
+}
+
+.header-nav > a {
+  margin-left: 0.4rem;
+}
+
+.content {
+}
+
+.home-content {
+  font-size: 1.2rem;
+}
+
+.archive-post-container {
+  margin-bottom: 2.5rem;
+}
+
+.archive-post-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.archive-post-date {
+}
+
+.archive-post-description {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.post-container {
+  margin-bottom: 2.5rem;
+}
+
+.post-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.post-date {
+}
+
+.post-description {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+code {
+  font-family: Consolas, monaco, monospace;
+  background: #f0f0f0;
+}
+
+pre {
+  overflow: scroll;
+  background: #f0f0f0;
+}
+
+.highlight {
+  padding: 0.5em;
+  margin: 0;
+  background: #f0f0f0;
+  border-radius: 2px;
+  font-size: 0.85rem;
+}
+
+.highlighter-rouge {
+  color: var(--brand-dark);
+  font-size: 0.8em;
+}
+
+hr {
+  position: relative;
+  margin: 1.5rem 3rem;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+}
+
+.ma0 {
+  margin: 0;
+}
