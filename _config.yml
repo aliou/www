@@ -1,5 +1,5 @@
 name: Aliou Diallo
-description: Aliou Diallo is a developer living in Paris.
+description: Aliou Diallo is a developer based in Paris.
 twitter: '@aliouftw'
 
 author:
@@ -9,14 +9,14 @@ author:
 google:
   verification: 'QnLybeTUEt_VtHQVLLtEz0WflVe-H7TNqCOTlF-tfz8'
 
-plugins:
-  - jekyll-assets
+# plugins:
+#   - jekyll-assets
 
 exclude: [Gemfile, Gemfile.lock, .circleci, vendor, .ruby-version]
 
-assets:
-  compression: true
-  gzip: true
+# assets:
+#   compression: true
+#   gzip: true
 
 # Permalinks
 permalink: /posts/:year/:month/:title/
