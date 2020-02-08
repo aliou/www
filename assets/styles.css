@@ -148,24 +148,20 @@ header {
 
 code {
   font-family: Consolas, monaco, monospace;
-  background: #f0f0f0;
 }
 
 pre {
   overflow: scroll;
-  background: #f0f0f0;
 }
 
 .highlight {
   padding: 0.5em;
   margin: 0;
-  background: #f0f0f0;
   border-radius: 2px;
   font-size: 0.85rem;
 }
 
 .highlighter-rouge {
-  color: var(--brand-dark);
   font-size: 0.8em;
 }
 
@@ -173,8 +169,8 @@ hr {
   position: relative;
   margin: 1.5rem 3rem;
   border: 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #eee;
 }
 
 .ma0 {
