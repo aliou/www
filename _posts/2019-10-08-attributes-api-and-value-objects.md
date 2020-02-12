@@ -150,7 +150,7 @@ enterprise = Ship.find(10)
 ---
 
 For the purpose of this blog post, I chose a fairly simple example to present the attributes API.
-To achieve a similar result, you could also define the categories as a ActiveRecord Enum, as a Postgres Enum[^2] or even have them in their own table and have a Postgres association between a Ship and its category, that is backed by a foreign Key to achieve integrity of your data.
+To achieve a similar result, you could also define the categories as a ActiveRecord Enum, as a Postgres Enum[^2] or even have them in their own table and have a Postgres association between a Ship and its category, that is backed by a foreign key to achieve integrity of your data.
 
 <small>Thanks to <a href='https://twitter.com/caouibachir' target="_blank">Bachir Çaoui</a> and Baicheng Yu for reviewing drafts versions of this post.</small>
 
