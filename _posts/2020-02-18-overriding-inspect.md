@@ -44,9 +44,13 @@ end
 Let's start by defining constants for each of our values. Under the `initialize` method, let's create constants using [`const_set`][]:
 
 ```ruby
+class Shift::Category
+  # ...
+
   VALID_CATEGORIES.each do |raw_category|
     const_set(raw_category.upcase, new(raw_category))
   end
+end
 ```
 
 [`const_set`]: https://www.rubydoc.info/stdlib/core/Module:const_set
@@ -71,10 +75,12 @@ So, how do we really pretend that our `Ship::Category` object is truly a constan
 
 [`inspect`]: https://www.rubydoc.info/stdlib/core/Object:inspect
 
-### Overriding inspect
+## Overriding inspect
 
+As we can see above, by default, `inspect` returns the class name, an representation of the memory address of the object and a list of instance variable of the object.
+ 
+In our case, we want `inspect` to instead display how the object should be accessed. This means making it look like the constants we've created above.
 
-TODO: Explain that we "simply" have to return the representation of our constant. Since it starts by an uppercase character, it will be displayed as if it is a constant.
 
 ```ruby
 class Shift::Category
