@@ -77,8 +77,12 @@ So, how do we really pretend that our `Ship::Category` object is truly a constan
 TODO: Explain that we "simply" have to return the representation of our constant. Since it starts by an uppercase character, it will be displayed as if it is a constant.
 
 ```ruby
-def inspect
-  "#{self.class}::#{raw_category.upcase}"
+class Shift::Category
+  # ...
+
+  def inspect
+    "#{self.class}::#{raw_category.upcase}"
+  end
 end
 ```
 
