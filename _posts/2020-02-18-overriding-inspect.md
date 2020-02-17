@@ -41,7 +41,7 @@ class Ship::Category
 end
 ```
 
-Let's start by defining constants for each of our values. Under the `initialize` method, let's create constants using [`const_set`][]:
+Let's start by defining constants for each of our values. Under the `initialize` method [^1], let's create constants using [`const_set`][]:
 
 ```ruby
 class Shift::Category
@@ -112,27 +112,11 @@ TODO: Conclusion about how this might be one of those times where ruby allow you
 TODO: List other reasons to override the inspect method:
 - Hiding sensitive values (how devise does it), how rails now does it since rails 6 with `filter_attributes`.
 - Better pretty printing of values in logs and in the console.
+- IpAdd
 
 
 TODO: Repo with code examples : <https://github.com/aliou/ships-category>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[^1]: We need to make sure the `initialize` method is defined as we call it immediately when defining the constants.
 
