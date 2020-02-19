@@ -117,5 +117,7 @@ TODO: List other reasons to override the inspect method:
 
 TODO: Repo with code examples : <https://github.com/aliou/ships-category>
 
+---
 
-[^1]: We need to make sure the `initialize` method is defined as we call it immediately when defining the constants.
+[^1]: Because our constants are set directly in the class, the `new` method needs to be already defined, hence defining them under the initialize method.
+
