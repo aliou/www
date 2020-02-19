@@ -1,13 +1,12 @@
 ---
 layout: post
-title: Changing perception of value objects by overriding inspect
+title: Changing perception of objects by overriding the inspect method
 description: >
   TBD
 tags: [ruby, rails]
 ---
 
-<!-- introduction about thinking about this while writing the previous post -->
-While writing my [previous post][], I realized that while using the attributes API allows us to avoid making mistakes when instantiating our value objects, it might not entirely convey that there's a limited number of objects that should be instantiated.
+While writing my [previous post][], I realized that while using the attributes API allows us to avoid making mistakes when instantiating our value objects, it might not entirely convey that there's a limited number of objects that can be instantiated [^1].
 
 To this end, I thought about a way to prevent this: let's pretend that our value objects are constants.
 
@@ -41,7 +40,7 @@ class Ship::Category
 end
 ```
 
-Let's start by defining constants for each of our values. Under the `initialize` method [^1], let's create constants using [`const_set`][]:
+Let's start by defining constants for each of our values. Under the `initialize` method [^2], let's create the constants using [`const_set`][] and a bit of metaprogramming:
 
 ```ruby
 class Shift::Category
@@ -78,9 +77,8 @@ So, how do we really pretend that our `Ship::Category` object is truly a constan
 ## Overriding inspect
 
 As we can see above, by default, `inspect` returns the class name, a representation of the memory address of the object and a list of instance variables of the object.
- 
-In our case, we want `inspect` to instead display how the object should be accessed. This means making it look like the constants we've created above.
 
+In our case, we want `inspect` to instead display how the object should be accessed. This means making it look like the constants we've created above:
 
 ```ruby
 class Shift::Category
@@ -94,30 +92,37 @@ end
 
 With this, the value object is now displayed as a constant when inspecting the object or in logs:
 
-```
+```ruby
 # Before we had:
 pry(main)> Ship::Category::SHUTTLE
-=> #<Ship::Category:0x00007fbddc853350 @raw_category="shuttle">
+# => #<Ship::Category:0x00007fbddc853350 @raw_category="shuttle">
 
 # Now we have
 pry(main)> Ship::Category::SHUTTLE
-=> Ship::Category::SHUTTLE
-
+# => Ship::Category::SHUTTLE
 ```
 
-TODO: Conclusion about how this might be one of those times where ruby allow you to go too far.
+<!-- As I write this, I realize that this might be one of those time where Ruby allows you to do -->
 
 ----
 
-TODO: List other reasons to override the inspect method:
-- Hiding sensitive values (how devise does it), how rails now does it since rails 6 with `filter_attributes`.
-- Better pretty printing of values in logs and in the console.
-- IpAdd
+Besides indulging in my whims, there are other interesting reasons to override inspect:
+- This is useful to hide sensitive values like emails or encrypted passwords, as [Devise does it][devise].
+- Since Rails 6, you can [configure ActiveRecord to filter attributes from inspection][rails-pr]. This is also done by [overriding the `inspect` method][activerecord-inspect].
+- The `IPAddr` class also [overrides the inspect method][ipaddr] to display a human readable representation of the IP address.
 
+[devise]: https://github.com/heartcombo/devise/blob/v4.7.1/lib/devise/models/authenticatable.rb#L120-L125
+[rails-pr]: https://github.com/rails/rails/pull/33756/files
+[activerecord-inspect]: https://github.com/rails/rails/pull/33756
+[ipaddr]: https://github.com/ruby/ruby/blob/v2_7_0/lib/ipaddr.rb#L457-L468
 
-TODO: Repo with code examples : <https://github.com/aliou/ships-category>
+<small>The code examples in this post are also available [on GitHub](https://github.com/aliou/ships-category){:target="blank"}.
+Thanks to <a href='https://twitter.com/caouibachir' target="_blank">Bachir Çaoui</a> and Stéphanie Chhim for reviewing a draft version of this post.</small>
+
 
 ---
 
-[^1]: Because our constants are set directly in the class, the `new` method needs to be already defined, hence defining them under the initialize method.
+[^1]: Of course, we could look at the file defining the constants, but where would be the fun in that?
+
+[^2]: Because our constants are set directly in the class, the `new` method needs to be already defined, hence defining them under the initialize method.
 
