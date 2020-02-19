@@ -77,7 +77,7 @@ So, how do we really pretend that our `Ship::Category` object is truly a constan
 
 ## Overriding inspect
 
-As we can see above, by default, `inspect` returns the class name, an representation of the memory address of the object and a list of instance variable of the object.
+As we can see above, by default, `inspect` returns the class name, a representation of the memory address of the object and a list of instance variables of the object.
  
 In our case, we want `inspect` to instead display how the object should be accessed. This means making it look like the constants we've created above.
 
@@ -119,4 +119,3 @@ TODO: Repo with code examples : <https://github.com/aliou/ships-category>
 
 
 [^1]: We need to make sure the `initialize` method is defined as we call it immediately when defining the constants.
-
