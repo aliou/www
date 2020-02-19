@@ -2,7 +2,7 @@
 layout: post
 title: Changing perception of objects by overriding the inspect method
 description: >
-  TBD
+  Let's see how Ruby allows us to override the inspect method to change how an object is perceived.
 tags: [ruby, rails]
 ---
 
