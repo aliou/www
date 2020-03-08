@@ -7,7 +7,7 @@ description: >
 tags: [git, tools, til]
 ---
 
-TIL I learned that their are different ways to ignore files in Git:
+TIL I learned that there are different ways to ignore files in Git:
 
 ### 1. Using a `.gitignore` file in a repository
 When created in a Git repository, this `.gitignore` is only applied to the
