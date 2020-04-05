@@ -19,7 +19,7 @@ At first, since each part I needed was separated by a `-`, I had some code that 
 project_name = project_name.join('-')
 ```
 
-Because the project name could also have some `-` in it, I needed to re-joined it after extracting the pull request data.
+Because the project name could also have some `-` in it, I needed to rejoin it after extracting the pull request data.
 At first, for a prototype, this worked fine. But when this internal project transitioned to being an important part of my team's tooling, I started looking at a better and cleaner way to achieve the same result.
 
 Since we were already validating the format of the application name with a regular expression, I figured I'd use it to also retrieve the data using named captures.
@@ -94,4 +94,3 @@ TODO: Conclusion and stuff
 <!-- - https://daneden.me/2019/11/23/regex-for-designers-and-writers/ -->
 <!-- - http://ruby-for-beginners.rubymonstas.org/advanced/regular_expressions.html -->
 <!-- - https://www.leighhalliday.com/named-captures-ruby-regular-expressions -->
-
