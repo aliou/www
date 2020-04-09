@@ -74,7 +74,7 @@ Finally, name the different captures. To do this, we need to prefix the content 
 Now that we've done this, we can easily retrieve the data we want from the application name using our resulting object:
 
 ```ruby
-expresion = /(?<project_name>.*)-pr-(?<pull_request_id>\d+)/
+expression = /(?<project_name>.*)-pr-(?<pull_request_id>\d+)/
 application_name = 'my_app-pr-1234'
 matches = expression.match(application_name)
 
@@ -84,7 +84,7 @@ matches.named_captures # => {"project_name"=>"my_app", "pull_request_id"=>"1234"
 
 ---
 
-<small>Thanks to <a href='https://twitter.com/caouibachir' target="_blank">Bachir Çaoui</a> for reviewing drafts versions of this post.</small>
+<small>Thanks to <a href='https://twitter.com/caouibachir' target="_blank">Bachir Çaoui</a> for reviewing draft versions of this post.</small>
 
 ---
 
