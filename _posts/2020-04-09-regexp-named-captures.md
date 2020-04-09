@@ -84,7 +84,7 @@ matches.named_captures # => {"project_name"=>"my_app", "pull_request_id"=>"1234"
 
 ---
 
-<small>Thanks to <a href='https://twitter.com/caouibachir' target="_blank">Bachir Çaoui</a> for reviewing draft versions of this post.</small>
+<small>Thanks to <a href='https://twitter.com/caouibachir' target="_blank">Bachir Çaoui</a>, Alexis Woo and Alexis Focheux for reviewing draft versions of this post.</small>
 
 ---
 
